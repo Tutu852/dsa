@@ -1,0 +1,1 @@
+colwise(arr,row,col);
