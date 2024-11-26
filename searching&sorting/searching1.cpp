@@ -83,13 +83,11 @@ int findmissingnumber(int arr[],int size){
     int e= size-1;
     int mid = s +(e-s)/2;
     int ans = -1;
-
     while(s <= e){
         
         int diff = arr[mid] - mid;
         if(diff == 1){
             s =mid+1;
-        
         }
         else{
             //store the ans
@@ -139,7 +137,7 @@ int main(){
 //     cout<< "Element found at Index " << ansIndex <<endl;
 //    }
 
-int  arr[] = {2,3,4,5,6,7,8,9};
+int  arr[] = {1,3,4,5,6,7,8,9};
 int size = 8;
 
 cout<<findmissingnumber(arr,size)<<endl;
