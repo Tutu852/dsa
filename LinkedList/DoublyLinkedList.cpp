@@ -30,6 +30,7 @@ void print (Node* head){
  
 
  int printLength( Node* &head){
+    //i create another pointer in head
     Node* temp =head ; 
 
     int len = 0;

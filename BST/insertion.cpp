@@ -209,15 +209,84 @@ Node* bstFromInorder(int inOrder[],int s,int e){
 
 }
 
+//convert this BST into a sorted linked list
+// vvvIMP question
+void convertBSTtoDLL(Node*root , Node* &head){
+    if(root == NULL){
+        return;
+    }
+    // RNL 
+    // R 
+    convertBSTtoDLL(root->right,head);
+    // N
+    root->right = head;
+    //i need this becauese if ll is null then it will give me erro so i need this
+
+    if(head !=NULL){
+    head->left =root;
+    }
+    head = root;
+    // L 
+    convertBSTtoDLL(root->left,head);
+}
+
+void printLinkedList(Node* head){
+    Node* temp = head;
+
+    while(temp != NULL){
+        cout<<temp->data<<"->";
+        temp = temp->right;
+    }
+    cout<<endl;
+}
+
+Node* convertDLLtoBST(Node* &head,int n){
+    //base case
+    if(head == NULL || n<=0){
+        return NULL;
+    }
+    // LNR 
+    // L
+    Node* leftsubtree = convertDLLtoBST(head,n/2);
+    // N 
+    Node* root = head;
+    root->left = leftsubtree;
+
+    //head update
+    head = head->right;
+
+    //R
+    Node* rightsubtree = convertDLLtoBST(head,n-n/2-1);
+    root->right=rightsubtree;
+    return root;
+};
+
 int main(){
+    Node* first =new Node(10);
+    Node* second = new Node(20);
+    Node* third = new Node(30);
 
-    int inOrder[] = {10,20,30,40,50,60,70};
-    int size = 7;
-    int start=0;
-    int end = size-1;
-    Node* root = bstFromInorder(inOrder,start,end);
+    first->right =second;
+    second->left = first;
+    second->right =third;
+    third->left = second;
 
+    Node* head = first;
+
+    Node*root =convertDLLtoBST(head ,3);
     levelOrderTraversal(root);
+
+    // int inOrder[] = {10,20,30,40,50,60,70};
+    // int size = 7;
+    // int start=0;
+    // int end = size-1;
+    // Node* root = bstFromInorder(inOrder,start,end);
+
+    // levelOrderTraversal(root);
+
+    // Node*head= NULL;
+    // convertBSTtoDLL(root,head);
+    // printLinkedList(head);
 
     // Node *root =NULL;
     // createBst(root);
