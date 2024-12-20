@@ -11,26 +11,26 @@
 
 
 // const func = (function(a){
-//     //delete keyword is only work on object not in function or other thing
+//     //delete keyword is only work on object not in function or in local variable 
 //   delete a;
 //   return a;
 // })(5)
 
 // console.log(func); //ans:-5
 
-// Question:-1 what's the Output
+// // Question:-1 what's the Output
 
 // const obj={
 //   a:"one",
 //   b:"two",
-//   a:"three",
+// //   a:"three",
 // };
 
 // console.log(obj); //ans is b:"two" and a:"three"
 
 
-//Question :-2 create a function multipyBytwo(obj) that
-              //  multiplies all numeric property valure of nums by 2
+// // Question :-2 create a function multipyBytwo(obj) that
+//             //    multiplies all numeric property valure of nums by 2
 // let nums = {
 //   a:100,
 //   b:200,
@@ -51,7 +51,7 @@
 
 
 
-//Question :-3 what's the Output of the following code?
+// Question :-3 what's the Output of the following code?
 
 // const a={};
 // const b = {key:"b"};
@@ -67,8 +67,8 @@
 // console.log(a[b]); //ans is 456
 
 
-//Question what is JSON.stringify and JSON.parse
-//this will use this in storing data in localstorage
+// Question what is JSON.stringify and JSON.parse
+// this will use this in storing data in localstorage
 // const user={
 //   name:"Piyush",
 //   age:24,
@@ -125,7 +125,7 @@
 
 
 // Question in  javascript
-//what is destructuring in obj
+// what is destructuring in obj
 
 // let user={
 //   name:"Piyush",

@@ -22,100 +22,102 @@
 // callbacks 
 // when we pass a function inside another function as argument that's called callback function
 
-console.log("start");
+// console.log("start");
 
-function importantAction(username , cb){
+// function importantAction(username , cb){
     
-    setTimeout(()=>{
-       cb(  `my Name ${username}`);
-    },5000)
-}
-function likeTheVideo(video,cb){
+//     setTimeout(()=>{
+//        cb(  `my Name ${username}`);
+//     },5000)
+// }
+// function likeTheVideo(video,cb){
     
-    setTimeout(()=>{
-       cb(  `Like the${video} video`);
-    },1000)
-}
-function ShareTheVideo(video,cb){
+//     setTimeout(()=>{
+//        cb(  `Like the${video} video`);
+//     },1000)
+// }
+// function ShareTheVideo(video,cb){
   
+//         setTimeout(()=>{
+//            cb(  `Share the${video} video`);
+//         },1000)
+// }
 
-        setTimeout(()=>{
-           cb(  `Share the${video} video`);
-        },1000)
-    
-}
 
 
 // //when we call this nested with in it that's called callback Hell
 
- importantAction("rajesh",function (message){
-    console.log(message); //undefined
+//  importantAction("rajesh",function (message){
+//     console.log(message); //undefined
    
-    likeTheVideo("Javascript  interview Question ", (like) =>{
-        console.log(like);
+//     likeTheVideo("Javascript  interview Question ", (like) =>{
+//         console.log(like);
 
-        ShareTheVideo("Javascript  interview Question ", (share) =>{
-            console.log(share);
+//         ShareTheVideo("Javascript  interview Question ", (share) =>{
+//             console.log(share);
     
-        });
-    });
-});
+//         });
+//     });
+// });
 
 
 
 // resolve above code usign Promise
 // console.log("start");
 
-// function importantAction(username ){
-//     return new Promise((resolve,reject)=>{
+function importantAction(username ){
+    return new Promise((resolve,reject)=>{
 
-//         setTimeout(()=>{
-//            resolve(  `my Name ${username}`);
-//         },5000)
-//     })
-// } 
-// function likeTheVideo(video,cb){
-//     return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+           resolve(  `my Name ${username}`);
+        },5000)
+    })
+} 
+function likeTheVideo(video,cb){
+    return new Promise((resolve,reject)=>{
 
-//         setTimeout(()=>{
-//            resolve(  `Like the${video} video`);
-//         },1000)
-//     })
-// }
-// function ShareTheVideo(video,cb){
+        setTimeout(()=>{
+           resolve(  `Like the${video} video`);
+        },1000)
+    })
+}
+function ShareTheVideo(video,cb){
     
-//     return new Promise((resolve,reject)=>{
+    return new Promise((resolve,reject)=>{
 
-//         setTimeout(()=>{
-//            resolve(  `sharethe${video} video`);
-//         },1000)
-//     })
-// }
+        setTimeout(()=>{
+           resolve(  `sharethe${video} video`);
+        },1000)
+    })
+}
 
 //instade of doing this
-//  importantAction("Roadside Coder")
-//  .then((res)=>{
-//     console.log(res);
-//     return likeTheVideo("javascript interview Question");
-//  }).then((res)=>{
-//     console.log(res);
-//     return ShareTheVideo("javascript Interview Question");
-//  }).then((res)=>{
-//     console.log(res);
-//  })
-//  .catch((err)=>console.log(err));
+ importantAction("Roadside Coder")
+ .then((res)=>{
+    console.log(res);
+    return likeTheVideo("javascript interview Question");
+ }).then((res)=>{
+    console.log(res);
+    return ShareTheVideo("javascript Interview Question");
+ }).then((res)=>{
+    console.log(res);
+ })
+ .catch((err)=>console.log(err));
 
 //  promise combinator :- these means this will help me to execute more than one promise in it and result accordingly;
 
-// Promise.allSettled([
-//     importantAction("Roadside Coder"),
-//     likeTheVideo("Javascript Interview Questuion"),
-//     ShareTheVideo("Javascript Interview Question"),
-// ]).then((res)=>{
-//     console.log(res);
-// }).catch((err)=>{
-//     console.log("Error: Promise Failed" , err);
-// })
+// Promise.all // this can help me to get all resolved cd thing . Problem for this is if any one of them will reject then it show  error
+
+
+Promise.allSettled([
+    importantAction("Roadside Coder"),
+    likeTheVideo("Javascript Interview Questuion"),
+    ShareTheVideo("Javascript Interview Question"),
+]).then((res)=>{
+    console.log(res);
+}).catch((err)=>{
+    console.log("Error: Promise Failed" , err);
+})
  
 
 //async await
@@ -250,3 +252,23 @@ function ShareTheVideo(video,cb){
 // loadjson("https://fakeurl.com/").catch((err)=>{
 //     console.log(err);
 // })
+
+// console.log("start");
+// function givemeName(username){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             const result = true;
+//             if(result) resolve("subscribt to roadside coder");
+//             else reject("username is not valid");
+//         },2000);
+//     })
+//     .then((res)=>{
+//         console.log(res);
+//     })
+//     .catch((err)=>{
+//         console.log(err);
+//     })
+// }
+
+// givemeName(rajesh);
+// console.log("end");

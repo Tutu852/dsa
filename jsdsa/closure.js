@@ -4,24 +4,28 @@
 
 
 
-// for(let i=0;i<5;i++){
-//     setTimeout(function(){
-//         console.log(i);
-//     },i * 1000);
-// }
+function a(){
+    for(let i=0;i<5;i++){
+    setTimeout(function(){
+        console.log(i);
+    },i * 1000);
+    }
+}
+
+a();
 
 
-// function a(){
-//     for(var i=0;i<3;i++){
-//        ( function(i){
-//             setTimeout(function log(){
-//                 console.log(i);
-//             },i * 1000);
-//         })(i);
+function a(){
+    for(var i=0;i<3;i++){
+       ( function(i){
+            setTimeout(function log(){
+                console.log(i);
+            },i * 1000);
+        })(i);
         
-//     }
-// }
-// a();
+    }
+}
+a();
 
 //  for(var i =0;i<5;i++){
 //    function innerHeight(i){
@@ -59,7 +63,6 @@
 // }
 
 // var addSix = createaBase(6);
-
 // addSix(10);
 // addSix(15);
 
@@ -109,7 +112,6 @@
 //             called++;
 //         }
 //     }
-    
 // }
 // let isSubscribe = likeTheVideo();
 // isSubscribe();
@@ -119,3 +121,25 @@
 
 
 
+
+// function subscribe(){
+//     var name = "Rajesh";
+//     function displayName(){
+//         console.log(name);
+//     }
+//     displayName();
+// }
+// subscribe();
+
+
+// clouser Scope Chain 
+
+// var userName ="Behera"
+// function makeFun(){
+//     var name = "Rajesh";
+//     function displayName(num){
+//         console.log(name,num,userName);
+//     }
+//     return displayName;
+// }
+// makeFun()(5);

@@ -12,7 +12,7 @@ void shiftingNegativeInteger(int arr[] ,int size){
     }
    }
 }
-
+ 
 
 
 int main(){

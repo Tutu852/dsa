@@ -35,6 +35,17 @@ void  convertToUppercase(char ch[] ,int n){
      }
 }
 
+void convertUpperCase(char ch[],int n){ 
+    int index = 0;
+    while(ch[index] != '/0'){
+        char currentChar = ch[index];
+        if(currentChar >= 'a' && currentChar <= 'z'){
+            ch[index] = currentChar - 'a' + 'A';
+        }
+        index++;
+    }
+}
+
 
 int main(){
 
@@ -50,7 +61,7 @@ int main(){
     char ch[100];
 
     cin.getline(ch,100); 
-    cout<<endl <<"before" <<ch <<endl;
+    cout<<endl <<"before " <<ch <<endl;
     convertToUppercase(ch ,100);
-    cout<<endl <<"after" <<ch <<endl;
+    cout<<endl <<"after " <<ch <<endl;
 }

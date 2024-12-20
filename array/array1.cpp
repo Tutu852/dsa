@@ -29,6 +29,16 @@ int MinNumber(int arr[],int size){
     }
     return minAns;
 }
+int MaxNumber(int arr[],int size){
+    int maxAns = INT_MIN;
+
+    for(int i=0;i<size;i++){
+        if(arr[i] > maxAns){
+            maxAns = arr[i];
+        }
+    }
+    return maxAns;
+}
 
 
 int main(){
@@ -91,12 +101,14 @@ int main(){
 // int size = 15;
 // CountZeroOne(arr,size); 
 
-int arr[] = {4,5,3,7,5,3,2};
+int arr[] = {4,5,3,7,5,3,8};
 int size=7;
 
-int mininum = MinNumber(arr,size);
+// int mininum = MinNumber(arr,size);
+int maximum = MaxNumber(arr,size);
 
-cout<<"Minimum Number is: "<< mininum <<endl;
+// cout<<"Minimum Number is: "<< mininum <<endl;
+cout<<"Maximum Number is: "<< maximum <<endl;
 
 
 }
