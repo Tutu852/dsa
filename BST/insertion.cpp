@@ -44,8 +44,6 @@ void levelOrderTraversal(Node* root){
     queue<Node*>q;
     q.push(root);
     q.push(NULL);
-
-
     //asli traversal start krete he
     while(!q.empty()){
         Node* front = q.front();
@@ -59,8 +57,7 @@ void levelOrderTraversal(Node* root){
         }else{
 
         cout<<front->data <<" ";
-
-
+        
         if(front->left != NULL){
             q.push(front->left);
         }
@@ -68,7 +65,6 @@ void levelOrderTraversal(Node* root){
             q.push(front->right);
         }
         }
-
     }
 }
 

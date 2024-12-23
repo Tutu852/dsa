@@ -2,6 +2,8 @@
 #include<queue>
 using namespace std;
 
+//vvvimp
+// heap creation me o(n) timecomplexity  
 class Heap{
     public:
     int *arr;
@@ -110,6 +112,7 @@ void heapify(int *arr ,int n,int index){
 
 
 void buildHeap(int arr[],int n){
+    // n/2 se 0 tak isiliye jarahahnu ki above n/2 +1 all are leaf node so i dont need to check  
     for(int index = n/2 ; index > 0 ; index--){
         heapify(arr,n,index);
     }
@@ -117,13 +120,16 @@ void buildHeap(int arr[],int n){
 
 void heapSort(int arr[],int n){
     while(n!=1){
+        //pehele element ko utha ke last me dala
         swap(arr[1],arr[n]);
+        // pichhe wale index pe jao 
         n--;
         heapify(arr,n,1);
     }
 }
 
 int getKthSmallestElement(int arr[] ,int n, int  k){
+    //this will give me the max heap what after the kth traversal what ever the top element is there so that is the kthsamallest element
     priority_queue<int>pq;
 
     //for k element ko process karo
