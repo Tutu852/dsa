@@ -4,28 +4,28 @@
 
 
 
-function a(){
-    for(let i=0;i<5;i++){
-    setTimeout(function(){
-        console.log(i);
-    },i * 1000);
-    }
-}
+// function a(){
+//     for(let i=0;i<5;i++){
+//     setTimeout(function(){
+//         console.log(i);
+//     },i * 1000);
+//     }
+// }
 
-a();
+// a();
 
 
-function a(){
-    for(var i=0;i<3;i++){
-       ( function(i){
-            setTimeout(function log(){
-                console.log(i);
-            },i * 1000);
-        })(i);
+// function a(){
+//     for(var i=0;i<3;i++){
+//        ( function(i){
+//             setTimeout(function log(){
+//                 console.log(i);
+//             },i * 1000);
+//         })(i);
         
-    }
-}
-a();
+//     }
+// }
+// a();
 
 //  for(var i =0;i<5;i++){
 //    function innerHeight(i){
@@ -99,25 +99,25 @@ a();
 //Courser in javascript
 //Q.7 Make this run ans
 
-// let view;
+let view;
 
-// function likeTheVideo(){
-//     let called = 0;
-//     return function(){
-//         if(called > 0){
-//             console.log("You have already liked this video");
-//         }else{
-//             view = "rajesh";
-//             console.log("Love to", view);
-//             called++;
-//         }
-//     }
-// }
-// let isSubscribe = likeTheVideo();
-// isSubscribe();
-// isSubscribe();
-// isSubscribe();
-// isSubscribe();
+function likeTheVideo(){
+    let called = 0;
+    return function(){
+        if(called > 0){
+            console.log("You have already liked this video");
+        }else{
+            view = "rajesh";
+            console.log("Love to", view);
+            called++;
+        }
+    }
+}
+let isSubscribe = likeTheVideo();
+isSubscribe();
+isSubscribe();
+isSubscribe();
+isSubscribe();
 
 
 

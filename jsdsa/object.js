@@ -144,3 +144,34 @@
 //   fullName :{first},
 // }=user;
 // console.log(first);
+
+
+// Q 
+
+const user1 = {
+    name: "Piyush",
+    age: 25,
+    address: {
+        street: "street1",
+        city: "city1",
+        }
+}
+
+const user2 = user1;
+
+user2.name = "Ramesh";
+user2.address.city = "pune";
+console.log(user1);
+console.log(user2);
+
+// In JavaScript, when you assign an object to another variable, such as const user2 = user1;, both variables (user1 and user2) point to the same memory reference. They do not create separate copies of the object. thats why the ans is
+// {
+//     name: 'Ramesh',
+//     age: 25,
+//     address: { street: 'street1', city: 'pune' }
+//   }
+//   {
+//     name: 'Ramesh',
+//     age: 25,
+//     address: { street: 'street1', city: 'pune' }
+//   }

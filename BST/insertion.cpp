@@ -186,6 +186,8 @@ Node* deleteFromBst(Node* root ,int target){
     return root;
 }
 
+//lakshay bhaiya delete way
+// step:1 :- find the node 
 
 Node* bstFromInorder(int inOrder[],int s,int e){
     //base case

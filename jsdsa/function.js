@@ -130,8 +130,35 @@
 
 // o/p based Question 
 
-const fn=(a,x,y,...numbers)=>{
-    console.log(a,y, numbers);
-}
+// const fn=(a,x,y,...numbers)=>{
+//     console.log(a,y, numbers);
+// }
 
-fn(1,2,3,4,5,6,7,8,9,);
+// fn(1,2,3,4,5,6,7,8,9,);
+
+
+// async function foo(){
+//     return "hello world";
+// }
+
+// const result = foo();
+// console.log(result); //promiese {"hello world"} //async always return promise
+
+//if interviwer ask please reject this promise then
+
+async function foo(){
+    return "hello world";
+    //these two way we can reject this promise
+
+    // return  new Promise.reject("hello world");
+    // throw new Error("hello world"); 
+
+    //if i need to delay 
+    // return new Promise(()=>{})
+       
+}
+    // i need hello world in this result varable  
+(async function(){
+    const result = await foo();
+    console.log(result);
+})();
