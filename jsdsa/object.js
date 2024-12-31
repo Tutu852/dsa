@@ -148,21 +148,21 @@
 
 // Q 
 
-const user1 = {
-    name: "Piyush",
-    age: 25,
-    address: {
-        street: "street1",
-        city: "city1",
-        }
-}
+// const user1 = {
+//     name: "Piyush",
+//     age: 25,
+//     address: {
+//         street: "street1",
+//         city: "city1",
+//         }
+// }
 
-const user2 = user1;
+// const user2 = user1;
 
-user2.name = "Ramesh";
-user2.address.city = "pune";
-console.log(user1);
-console.log(user2);
+// user2.name = "Ramesh";
+// user2.address.city = "pune";
+// console.log(user1);
+// console.log(user2);
 
 // In JavaScript, when you assign an object to another variable, such as const user2 = user1;, both variables (user1 and user2) point to the same memory reference. They do not create separate copies of the object. thats why the ans is
 // {
@@ -175,3 +175,31 @@ console.log(user2);
 //     age: 25,
 //     address: { street: 'street1', city: 'pune' }
 //   }
+
+// Destructuring 
+let Details ={
+    name: "Ramesh",
+    age: 25,
+}
+
+//to access this name 
+//using notation bracket
+Details[name];
+
+// let {name ,age} = Details;
+//using spread operator
+
+// let {name ,...data} = Details;
+
+//change the name in to userName
+// let {name:userName ,...data} = Details
+// console.log(name); //ramesh
+// console.log(age); //25
+//spread operator
+
+// console.log(data); //{age:25};
+
+//after chnageing the name
+// console.log(userName); //Ramesh
+// console.log(data); //{age: 25}
+

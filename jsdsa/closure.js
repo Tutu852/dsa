@@ -2,8 +2,6 @@
 // console.log(getScore()); // "Chamakh scored 5"
 
 
-
-
 // function a(){
 //     for(let i=0;i<5;i++){
 //     setTimeout(function(){
@@ -11,12 +9,17 @@
 //     },i * 1000);
 //     }
 // }
-
 // a();
+
+// for(var i=1;i<=3;i++){
+//     setTimeout(()=>{
+//         console.log(i); //4 will come 3 times
+//     },1000);
+// }
 
 
 // function a(){
-//     for(var i=0;i<3;i++){
+//     for(var i=1;i<=3;i++){
 //        ( function(i){
 //             setTimeout(function log(){
 //                 console.log(i);
@@ -47,6 +50,18 @@
 // }
 
 // let wish = salutation();
+// wish();
+
+// create a clouser 
+// function salution(){
+//     let name = "Gelli";
+
+//     function greeat(){
+//         console.log(`Hello ${name}!`);
+//     }
+//     return greeat;
+// }
+// let wish = salution();
 // wish();
 
 
@@ -99,25 +114,25 @@
 //Courser in javascript
 //Q.7 Make this run ans
 
-let view;
+// let view;
 
-function likeTheVideo(){
-    let called = 0;
-    return function(){
-        if(called > 0){
-            console.log("You have already liked this video");
-        }else{
-            view = "rajesh";
-            console.log("Love to", view);
-            called++;
-        }
-    }
-}
-let isSubscribe = likeTheVideo();
-isSubscribe();
-isSubscribe();
-isSubscribe();
-isSubscribe();
+// function likeTheVideo(){
+//     let called = 0;
+//     return function(){
+//         if(called > 0){
+//             console.log("You have already liked this video");
+//         }else{
+//             view = "rajesh";
+//             console.log("Love to", view);
+//             called++;
+//         }
+//     }
+// }
+// let isSubscribe = likeTheVideo();
+// isSubscribe();
+// isSubscribe();
+// isSubscribe();
+// isSubscribe();
 
 
 

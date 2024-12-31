@@ -32,33 +32,33 @@
 // })
 
 // optimise the code 
-function fetchUserData(UserId){
-    return new Promise((resolve)=>{
+// function fetchUserData(UserId){
+//     return new Promise((resolve)=>{
 
-        setTimeout(() => {
-            console.log("fetch user data");
-            resolve(UserId)
-        }, 1000);
-    })
-}
+//         setTimeout(() => {
+//             console.log("fetch user data");
+//             resolve(UserId)
+//         }, 1000);
+//     })
+// }
 
-function fetchPosts(UserId){
-    return new Promise((resolve)=>{
-        setTimeout(() => {
-            console.log("Fetch posts for user ",UserId);
-            resolve();
-        }, 1000);
-    })
-}
+// function fetchPosts(UserId){
+//     return new Promise((resolve)=>{
+//         setTimeout(() => {
+//             console.log("Fetch posts for user ",UserId);
+//             resolve();
+//         }, 1000);
+//     })
+// }
 
-function fetchComments(){
-    return new Promise((resolve)=>{
-        setTimeout(()=>{
-            console.log("fetch comments");
-            resolve();
-        },1000)
-    })
-}
+// function fetchComments(){
+//     return new Promise((resolve)=>{
+//         setTimeout(()=>{
+//             console.log("fetch comments");
+//             resolve();
+//         },1000)
+//     })
+// }
 // async function fetchAllData() {
 
 //     console.time("Total Execution Time");
@@ -78,10 +78,17 @@ function fetchComments(){
 // // Call the async function
 // fetchAllData();
 
-console.time("Total Execution time");
-fetchUserData(1)
-    .then(fetchPosts)
-    .then(fetchComments)
-    .then(() => console.log("All tasks done!"))
-    .catch((error) => console.error(error));
-console.timeEnd("Total Execution time");
+// console.time("Total Execution time");
+// fetchUserData(1)
+//     .then(fetchPosts)
+//     .then(fetchComments)
+//     .then(() => console.log("All tasks done!"))
+//     .catch((error) => console.error(error));
+// console.timeEnd("Total Execution time");
+
+
+
+// imp 
+
+
+

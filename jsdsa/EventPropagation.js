@@ -37,7 +37,6 @@ button.addEventListener("click" , function(){
 
 // Q what is the event Capturing /trickling 
 
-
 // const div = document.querySelector("div");
 // const form = document.querySelector("form");
 // const button = document.querySelector("button");

@@ -146,8 +146,8 @@
 
 //if interviwer ask please reject this promise then
 
-async function foo(){
-    return "hello world";
+// async function foo(){
+//     return "hello world";
     //these two way we can reject this promise
 
     // return  new Promise.reject("hello world");
@@ -156,9 +156,39 @@ async function foo(){
     //if i need to delay 
     // return new Promise(()=>{})
        
+// }
+//     // i need hello world in this result varable  
+// (async function(){
+//     const result = await foo();
+//     console.log(result);
+// })();
+
+// Q.
+
+// foo();
+
+// var foo = 20;
+
+// function foo(){
+//     console.log("calling foo");
+// }
+// foo();
+
+
+// Q:-
+// async function foo(){
+//     return "Hello world";
+// }
+
+// async function main() {
+//     const result =await foo();
+// console.log(result);
+// }
+
+// main(); //hello world
+
+function abc(){
+    console.log("hii");
 }
-    // i need hello world in this result varable  
-(async function(){
-    const result = await foo();
-    console.log(result);
-})();
+const value = new abc();
+console.log(value); // abc {}
