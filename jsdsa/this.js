@@ -3,24 +3,28 @@
 //  function getParam(){
 //     console.log(this.a);
 //  }
+//  getParam();//5
 
-//  getParam();
+
 //  this.a =5;
 //  const getParam1=()=>{
 //     console.log(this.a);
 //  }
 
-//  getParam1();
+//  getParam1();//5
 
 //  let user ={
 //     name:"Rajesh",
 //     age:24,
 //     getDetails(){
-//         console.log(this )
+//         console.log(this.name )
 //     }
 //  }
 
 //  user.getDetails();
+
+
+
 
 //  let user1 ={
 //     name:"Rajesh",
@@ -34,6 +38,19 @@
 //  }
 
 //  user1.childObj.getDetails1();
+
+//arrow function will refere to window if it is nested function then it refer to the its parent function 
+
+// let user = {
+//    name:"Rajesh",
+//    age:24,
+//    getDetails(){
+//       const nestedArrow = () =>console.log(this.name);
+//       nestedArrow();
+// }
+
+// }
+// user.getDetails();
 
 
 //  class user{
@@ -111,18 +128,18 @@
 
 // Question
 
-const user ={
-   name : "rajesh",
-   greet(){
-      return `hello,${this.name}`
-   },
-   farewall: ()=>{
-      return `goodbye ,${this.name}`
-   }
-}
+// const user ={
+//    name : "rajesh",
+//    greet(){
+//       return `hello,${this.name}`
+//    },
+//    farewall: ()=>{
+//       return `goodbye ,${this.name}`
+//    }
+// }
 
 
-console.log(user.greet())
+// console.log(user.greet())
 
 //ans is hello rajesh becz this normal function is pointed to the user object 
 // console.log(user.farewall());
@@ -145,20 +162,20 @@ console.log(user.greet())
 // object.method(callback);//4
 
 
-var length = 4;
-function callback(){
-    console.log(this.length);
-}
+// var length = 4;
+// function callback(){
+//     console.log(this.length);
+// }
 
 
-const object  = {
-   length :5,
-   method(){
-      console.log(arguments)
-      arguments[0]();
-   }
-}
-object.method(callback,2,3);//4
+// const object  = {
+//    length :5,
+//    method(){
+//       console.log(arguments)
+//       arguments[0]();
+//    }
+// }
+// object.method(callback,2,3);//4
 
 
 

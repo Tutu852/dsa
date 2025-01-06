@@ -186,7 +186,7 @@ int main(){
     // int n=6;
     // buildHeap(arr,n);
     // cout<<"Printing heap : "<<endl;
-    // for(int i=1;i<=6;i++){
+    // for(int i=1;i<=6;i++){  
     //     cout<<arr[i]<<" ";
     // }
     // cout<<endl;

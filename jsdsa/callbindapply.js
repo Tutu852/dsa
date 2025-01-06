@@ -1,6 +1,12 @@
 //what is call
 
+// var obj ={name:"rajesh"};
 
+// function sayHello(age){
+//   return "Hello " + this.name + " is " + age;
+// }
+// console.log(sayHello()); //Hello undefined is undefined
+// after fixing 
 
 // var obj = {name:"rajesh"};
 
@@ -27,8 +33,9 @@
 //     return "Hello " + this.name + " is "+age +" is an a " + profession ;
 // }
 // const bindfunc =sayHello.bind(obj)
+
 // console.log(bindfunc(24, " software Engineer ")); 
-// console.log(bindfunc(24, " software Engineer ")); 
+// console.log(bindfunc(23, " software Engineer ")); 
 
 
 //output base question
@@ -231,27 +238,45 @@
 
 
 //pollyfill for apply
-let car1 = {
-    color:"Red",
-    companey:"Farrari",
-};
+// let car1 = {
+//     color:"Red",
+//     companey:"Farrari",
+// };
 
-function purchaseCar(currency,price){
-  console.log(
-    `I have purchased ${this.color} - ${this.companey} car for  ${currency} ${price}`
-  )  
-}
+// function purchaseCar(currency,price){
+//   console.log(
+//     `I have purchased ${this.color} - ${this.companey} car for  ${currency} ${price}`
+//   )  
+// }
 
-Function.prototype.myApply = function(context = {} , args = []){
-    if(typeof this !== 'function'){
-        throw new Error(this + "Its not callable");
-    }
+// Function.prototype.myApply = function(context = {} , args = []){
+//     if(typeof this !== 'function'){
+//         throw new Error(this + "Its not callable");
+//     }
 
-    if(!Array.isArray(args)){
-        throw new TypeError("createListFromArray like called on non")
-    }
-    context.fn = this;
-    context.fn(...args);
-}
+//     if(!Array.isArray(args)){
+//         throw new TypeError("createListFromArray like called on non")
+//     }
+//     context.fn = this;
+//     context.fn(...args);
+// }
 
-purchaseCar.myApply(car1,["$", 1000] );
+// purchaseCar.myApply(car1,["$", 1000] );
+
+// const person ={
+
+//   name : "rajesh",
+  
+//     sayHello:function(){
+//       return "hello "+ this.name;
+//     }
+// }
+// console.log(person.sayHello());
+
+// var obj = {name:"rajesh"}
+
+// function sayHello(age){
+//   return "hello "+ this.name + "is" +age;
+// }
+// console.log(sayHello.call(obj,24));
+

@@ -68,7 +68,7 @@ void levelOrderTraversal(Node* root){
         }
     }
 }
-
+//this code is for CBT + BST -convert in valid Heap
 
 void storeInorderTraversal(Node* root,vector<int>&in){
 

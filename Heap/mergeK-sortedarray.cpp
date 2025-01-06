@@ -27,7 +27,7 @@ void mergeKSortedArray(int arr[][4],int n,int k,vector<int>&ans){
     priority_queue<Info* , vector<Info*>, compare>pq;
 
     //1 step : process first k element
-    for(int row = 0;row<k;row++){
+    for(int row=0; row<k ; row++){
         int element = arr[row][0];
         Info* temp = new Info(element,row,0);
         pq.push(temp);

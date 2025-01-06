@@ -1,12 +1,11 @@
 #include<iostream>
-
 #include<limits.h>
 using namespace std;
 
 class info{
     public:
     int maxVal;
-    bool isHeap;
+    bool isHeap; 
     int data;
     info* left;
     info* right;
