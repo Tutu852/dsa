@@ -83,9 +83,7 @@ int colWiseSum(int arr[][3],int row,int col){
      
 }
 
-
 //transpose;
-
 void transpose(int arr[][3],int row,int col){
     for(int i=0;i<row;i++){
         for(int j=0;j<=i;j++){
@@ -93,6 +91,14 @@ void transpose(int arr[][3],int row,int col){
         }
     }
 }
+
+// void transpose(int arr[][3],int row,int col){
+//     for(int i=0;i<row;i++){
+//         for(int j=i;j<=col;j++){
+//             swap(arr[i][j] , arr[j][i]);
+//         }
+//     }
+// }
   
 
 

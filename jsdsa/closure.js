@@ -64,6 +64,18 @@
 // let wish = salution();
 // wish();
 
+//in closer we can access n every scope
+var e = 10;
+function sum(a){
+    return function (b){
+        return function (c){
+            return function (d){
+                return a + b + c + d + e;
+            }
+        }   
+    }
+}
+console.log(sum(1)(2)(3)(4));
 
 
 

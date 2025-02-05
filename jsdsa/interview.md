@@ -1,5 +1,5 @@
 Q.when we create a non predefined tag like if we create a name tag what will happen.
-A.it will indecate like span tag like inline.when we create an non predefined tag that always create a lnline like tag.
+A.it will indicate like span tag like inline.when we create an non predefined tag that always create a lnline like tag.
 
 Q.what is the difference between inline inline and block element
 

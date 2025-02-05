@@ -3,10 +3,6 @@
 // const num2 = 3;
 // const name = "Chamakh";
 
-
-
-
-
 // // This function is defined in the global scope
 // function multiply() {
 //   return num1 * num2;
@@ -87,6 +83,10 @@
 //     })(2);
 // })(1);
 
+// (function square(num){
+//     console.log(num * num);
+// })(5);
+
 
 // Q Function Hoisting 
 
@@ -110,7 +110,7 @@
 // fun();
 
 
-// Q:- Params vs Arguments 
+// Q:- Params vs Arguments   
 
 // function square(num){ //params
 //     console.log(num  * num);
@@ -135,6 +135,7 @@
 // }
 
 // fn(1,2,3,4,5,6,7,8,9,);
+
 
 
 // async function foo(){
@@ -187,8 +188,19 @@
 
 // main(); //hello world
 
-function abc(){
-    console.log("hii");
-}
-const value = new abc();
-console.log(value); // abc {}
+// function abc(){
+//     console.log("hii");
+// }
+// const value = new abc();
+// console.log(value); // abc {}
+
+
+let count = 0;
+
+(function printCount(){
+    if(count === 0){
+        let count = 1;
+        console.log(count);//1
+    }
+    console.log(count);//0 because this shadowing will work on that block scope so on  1st console.log(1) as answer only for that second count it is now a fucntion scope so it will take count =0
+})()

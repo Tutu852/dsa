@@ -22,8 +22,9 @@ class compare{
         return a->data > b->data;
     }
 };
-
+// tc :- O(klogk) 
 void mergeKSortedArray(int arr[][4],int n,int k,vector<int>&ans){
+    
     priority_queue<Info* , vector<Info*>, compare>pq;
 
     //1 step : process first k element
@@ -51,6 +52,7 @@ void mergeKSortedArray(int arr[][4],int n,int k,vector<int>&ans){
             Info* newInfo = new Info(arr[topRow][topCol+1],topRow,topCol+1);
             pq.push(newInfo);
         }
+    delete temp;
     }
 }
 

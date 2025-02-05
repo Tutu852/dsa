@@ -12,7 +12,7 @@
 // var triggerCount = 0;
 
 // const debouncedCount = _.debounce(()=>{
-//     count.innerHTML = ++triggerCount;
+    //     count.innerHTML = ++triggerCount;
 // },800)
 
 // btn.addEventListener('click',()=>{
@@ -20,7 +20,7 @@
 //     debouncedCount();
 // })
 
-//loadash is create a custom implementation of debouncing
+//loadash web application is create a custom implementation of debouncing
 
 
 //throttling
@@ -84,35 +84,35 @@
 
 
 
-const btn1 = document.querySelector(".increment_btn");
-const btnPress1 = document.querySelector(".increment_pressed");
-const count1 = document.querySelector(".increment_count");
+// const btn1 = document.querySelector(".increment_btn");
+// const btnPress1 = document.querySelector(".increment_pressed");
+// const count1 = document.querySelector(".increment_count");
 
 
-var pressedCount = 0;
-var triggerCount = 0;
+// var pressedCount = 0;
+// var triggerCount = 0;
 
-const myThrottle=((cb,d)=>{
-    let lastCallTime = 0;
+// const myThrottle=((cb,d)=>{
+//     let lastCallTime = 0;
 
-    return (...args)=>{
-        let now =  new Date().getTime();
-        if(now - lastCallTime < d) return;
-        lastCallTime=now;
-        return cb(...args);
-    }
-})
+//     return (...args)=>{
+//         let now =  new Date().getTime();
+//         if(now - lastCallTime < d) return;
+//         lastCallTime=now;
+//         return cb(...args);
+//     }
+// })
 
-const start = new Date().getTime();
+// const start = new Date().getTime();
 
-const throttlingCount = myThrottle(()=>{
-    const now = new Date().getTime();
-    console.log(now - start);
+// const throttlingCount = myThrottle(()=>{
+//     const now = new Date().getTime();
+//     console.log(now - start);
     
-    count1.innerHTML = ++triggerCount;
-},1000)
+//     count1.innerHTML = ++triggerCount;
+// },1000)
 
-btn1.addEventListener('click',()=>{
-    btnPress1.innerHTML = ++pressedCount;
-    throttlingCount();
-})
+// btn1.addEventListener('click',()=>{
+//     btnPress1.innerHTML = ++pressedCount;
+//     throttlingCount();
+// })

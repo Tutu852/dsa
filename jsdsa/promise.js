@@ -2,7 +2,6 @@
 
 
 
-
 // console.log("start");
 
 // function importantAction(username){
@@ -65,59 +64,72 @@
 // resolve above code usign Promise
 // console.log("start");
 
-function importantAction(username ){
-    return new Promise((resolve,reject)=>{
+// function importantAction(username ){
+//     return new Promise((resolve,reject)=>{
 
-        setTimeout(()=>{
-           resolve(  `my Name ${username}`);
-        },5000)
-    })
-} 
-function likeTheVideo(video,cb){
-    return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//            resolve(  `my Name ${username}`);
+//         },5000)
+//     })
+// } 
+// function likeTheVideo(video,cb){
+//     return new Promise((resolve,reject)=>{
 
-        setTimeout(()=>{
-           resolve(  `Like the${video} video`);
-        },1000)
-    })
-}
-function ShareTheVideo(video,cb){
+//         setTimeout(()=>{
+//            resolve(  `Like the${video} video`);
+//         },1000)
+//     })
+// }
+// function ShareTheVideo(video,cb){
     
-    return new Promise((resolve,reject)=>{
+//     return new Promise((resolve,reject)=>{
 
-        setTimeout(()=>{
-           resolve(  `sharethe${video} video`);
-        },1000)
-    })
-}
+//         setTimeout(()=>{
+//            resolve(  `sharethe${video} video`);
+//         },1000)
+//     })
+// }
 
-//instade of doing this
- importantAction("Roadside Coder")
- .then((res)=>{
-    console.log(res);
-    return likeTheVideo("javascript interview Question");
- }).then((res)=>{
-    console.log(res);
-    return ShareTheVideo("javascript Interview Question");
- }).then((res)=>{
-    console.log(res);
- })
- .catch((err)=>console.log(err));
+// //instade of doing this
+//  importantAction("Roadside Coder")
+//  .then((res)=>{
+//     console.log(res);
+//     return likeTheVideo("javascript interview Question");
+//  }).then((res)=>{
+//     console.log(res);
+//     return ShareTheVideo("javascript Interview Question");
+//  }).then((res)=>{
+//     console.log(res);
+//  })
+//  .catch((err)=>console.log(err));
 
-//  promise combinator :- these means this will help me to execute more than one promise in it and result accordingly;
+// //  promise combinator :- these means this will help me to execute more than one promise in it and result accordingly;
 
-// Promise.all // this can help me to get all resolved cd thing . Problem for this is if any one of them will reject then it show  error
+// // Promise.all // this can help me to get all resolved cd thing . Problem for this is if any one of them will reject then it show  error
 
+// Promise.all([
+//     importantAction("Roadside Coder"),
+//         likeTheVideo("Javascript Interview Questuion"),
+//         ShareTheVideo("Javascript Interview Question"),
+// ]).then((res)=>{
+//     console.log(res);
+// }).catch((err)=>{
+//     console.error("Error : Promises")
+// })
 
-Promise.allSettled([
-    importantAction("Roadside Coder"),
-    likeTheVideo("Javascript Interview Questuion"),
-    ShareTheVideo("Javascript Interview Question"),
-]).then((res)=>{
-    console.log(res);
-}).catch((err)=>{
-    console.log("Error: Promise Failed" , err);
-})
+// Promise.race = it return 1st promise that reject or resolve
+
+//Promise.any = it will return only the 1st resolve one if 3 function are tehre and all 3are rejected then it will give reject
+
+// Promise.allSettled([
+//     importantAction("Roadside Coder"),
+//     likeTheVideo("Javascript Interview Questuion"),
+//     ShareTheVideo("Javascript Interview Question"),
+// ]).then((res)=>{
+//     console.log(res);
+// }).catch((err)=>{
+//     console.log("Error: Promise Failed" , err);
+// })
  
 
 //async await
@@ -153,7 +165,7 @@ Promise.allSettled([
 //         if(result){
 //             resolve("I am resolved");
 //         }else{
-//             reect(new Error("Why aren't you subscribed to readside coder"))
+//             reject(new Error("Why aren't you subscribed to readside coder"))
 //         }
 //     },2000)
 // });
@@ -194,6 +206,22 @@ Promise.allSettled([
 //because javascript always consider sync then async code so here resolve is coming in as async.
 
 
+console.log("start"); //first
+const fn = () =>{
+    new Promise((resolve,reject)=>{
+        console.log(1);//third because after middle fn()run so this will go after middle
+        resolve("success");//fifth
+    })
+
+    console.log("middle");//second
+
+    fn().then((res)=>{
+        console.log(res); //fifth
+    })
+}
+console.log("end");//fourth
+
+
 // function job(){
 //     return new Promise(function(resolve ,reject){
 //         reject();
@@ -219,9 +247,44 @@ Promise.allSettled([
 //     console.log("Success 4");
 // })
 
+//Ans:- error 1 after Success 4 because we reject the promise so it directly come to error
 
+function job(state){
+    return new Promise(function(resolve,reject){
+        if(state){
+            resolve("success");
+        }else{
+            reject("error");
+        }
+    });
+}
 
-// // Q3 
+let promise =job(true);
+
+promise
+    .then(function(data){
+        console.log(data);
+
+        return job(false);
+    })
+    .catch(function(error){
+        console.log(error);
+        //when u return in catch it will resolve next then
+        return "Error Caught";
+    })
+    .then(function(data){
+        console.log(data);
+        return job(true);
+    })
+    .catch(function(error){
+        console.log(error);
+    })
+
+    // Ans:-  success
+            //error
+            //error caught
+
+// // Q3  promise chaining
 // const firstPromise = new Promise((resolve ,reject)=>{
 //     resolve("First!")
 // })
