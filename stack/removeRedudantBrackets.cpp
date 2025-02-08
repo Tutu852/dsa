@@ -26,7 +26,7 @@ bool checkRedundant(string &str){
             if(operaotrCount == 0){
                 return true;
             }
-        }
+        } 
     }
     // aagr main yaha tak pohancha hu 
     //iska matlab k har ek bracket k pair k beech me
@@ -37,15 +37,31 @@ bool checkRedundant(string &str){
 
 int main(){
 
-string str = "((a+b)*(c+d))";
+string str = "((a+b)*(c+d))(";
 bool ans = checkRedundant(str);
 
 
 if(ans == true){
-    cout<<"Redundant Breackets Present "<<endl;
+    cout<<"Redundant Breackets Not Present "<<endl;
 }else{
-    cout<<"Redundant Brackets Not Present "<< endl;
+    cout<<"Redundant Brackets  Present "<< endl;
 }
 
     return 0;
 }
+
+
+// dry run 
+// Index	Char	Stack (st)	Operator Count	Operation	Result
+// 0	      (	       (	        -	        Push to stack	
+// 1	      (	       ((	        -	        Push to stack	
+// 2	      a	       ((	        -	        Ignore	
+// 3	      +	       ((+	        -	        Push to stack	
+// 4	      b	       ((+	        -	        Ignore	
+// 5	      )	       (	        1	        Pop till '(', count operator	Continue
+// 6	      *	       (*	        -	        Push to stack	
+// 7	      (	       (* (	        -	        Push to stack	
+// 8	      c	       (* (	        -	        Ignore	
+// 9	      +	       (* (+	    -	        Push to stack	
+// 10	      d	       (* (+	    -	        Ignore	
+// 11	      )	       (*	        1	        Pop till '(', count operator	Continue

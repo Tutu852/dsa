@@ -15,6 +15,9 @@
 //     return duplicates;
 //   };
 
+
+// another way
+
 // const findDuplicatesInString = (str) => {
 //     let duplicates = [];
 //     let seen = {};  // Using an object to track occurrences
