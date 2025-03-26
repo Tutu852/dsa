@@ -22,11 +22,13 @@ int main(){
     mapping.insert(q);
     mapping.insert(r);
     //insertion using another way
+    //ase karo
     mapping["vicky"]=26;
 
     cout<<"Size of map: " <<mapping.size()<<endl;
     //to access use at
     cout<<mapping.at("love") <<endl;
+    //ase karo
     cout<<mapping["love"] <<endl;
 
 

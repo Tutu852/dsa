@@ -37,7 +37,7 @@ bool checkRedundant(string &str){
 
 int main(){
 
-string str = "((a+b)*(c+d))(";
+string str = "((a+b)*(c+d))";
 bool ans = checkRedundant(str);
 
 

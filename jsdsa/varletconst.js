@@ -50,21 +50,23 @@
 
 
 
-
+//Hoisting
+console.log(count);//ans is undefined because when we do this it already present in creation phase there it is undefined
+var count = 1;
 // Q1
 
-function abc(){
-    console.log(a);
+// function abc(){
+//     console.log(a);
 
-    var a = 10;
-}
-abc();
+//     var a = 10;
+// }
+// abc();
 
-function bcd(){
-    console.log(a,b,c);
+// function bcd(){
+//     console.log(a,b,c);
 
-    const c = 30;
-    let b = 20;
-    var a= 10;
-}
-bcd();
+//     const c = 30;
+//     let b = 20;
+//     var a= 10;
+// }
+// bcd();
