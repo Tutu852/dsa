@@ -1,3 +1,4 @@
+//what is closure?
 
 // console.log(getScore()); // "Chamakh scored 5"
 
@@ -55,7 +56,6 @@
 // create a clouser 
 // function salution(){
 //     let name = "Gelli";
-
 //     function greeat(){
 //         console.log(`Hello ${name}!`);
 //     }
@@ -65,17 +65,18 @@
 // wish();
 
 //in closer we can access n every scope
-var e = 10;
-function sum(a){
-    return function (b){
-        return function (c){
-            return function (d){
-                return a + b + c + d + e;
-            }
-        }   
-    }
-}
-console.log(sum(1)(2)(3)(4));
+
+// var e = 10;
+// function sum(a){
+//     return function (b){
+//         return function (c){
+//             return function (d){
+//                 return a + b + c + d + e;
+//             }
+//         }   
+//     }
+// }
+// console.log(sum(1)(2)(3)(4)); //20
 
 
 
@@ -93,8 +94,29 @@ console.log(sum(1)(2)(3)(4));
 // addSix(10);
 // addSix(15);
 
+// time optimization using closure 
+// function find(index){
+//     let a = [];
+//     for(let i = 0;i<100000;i++){
+//         a[i] = i*i;
+//     }
+//     return function(index){
+    
+//         console.log(a[index])
+//     }
+// }
+// // const clouser = find();
+// console.time("6");
+// clouser(6);
+// console.timeEnd("6");
+// console.time("6");
+// clouser(6);
+// console.timeEnd("6");
+
+
 
 //create a private counter
+
 
 // function counter(){
 //     var _counter = 0;
@@ -119,6 +141,43 @@ console.log(sum(1)(2)(3)(4));
 
 
 // console.log(c.retrive());
+
+
+//what is Module Pattern
+// var module = (function(){
+//     function privateMethod(){
+//         console.log("Private Method");
+//     }
+//     return {
+//         publicMethod: function(){
+//             console.log("Public Method");
+            
+//         }
+//     }
+// })();
+
+// module.publicMethod();
+// module.privateMethod();
+
+let view;
+function likeTheVideo(){
+    let called = 0;
+    return function(){
+
+        if(called > 0){
+            console.log("Already like the Video");
+        }else{
+            view = "Like the video";
+            console.log("Please ",view);
+            called++;
+        }
+    }
+}
+let like = likeTheVideo();
+like();
+like();
+like();
+like();
 
 
 
@@ -170,3 +229,4 @@ console.log(sum(1)(2)(3)(4));
 //     return displayName;
 // }
 // makeFun()(5);
+

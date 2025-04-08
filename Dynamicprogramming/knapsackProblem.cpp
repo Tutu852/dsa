@@ -18,6 +18,9 @@ int solveUsingRec(int capacity,int wt[],int profit[],int index,int n){
     //     }
     // }
 
+    //inc /exclude
+  
+
     // inc /exc 
     int include  =0;
     //agar current item ka weight capacity se kam he

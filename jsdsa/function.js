@@ -1,7 +1,10 @@
+
 // // The following variables are defined in the global scope
 // const num1 = 20;
 // const num2 = 3;
-// const name = "Chamakh";
+// const name = "Rajesh ";
+
+
 
 // // This function is defined in the global scope
 // function multiply() {
@@ -11,6 +14,7 @@
 // console.log(multiply()); // 60
 
 // // A nested function example
+
 // function getScore() {
 //   const num1 = 2;
 //   const num2 = 3;
@@ -20,7 +24,7 @@
 //   }
 
 //   return add();
-// }
+// }    
 
 // console.log(getScore()); // "Chamakh scored 5"
 
@@ -37,8 +41,7 @@
 //             setTimeout(function log(){
 //                 console.log(i);
 //             },i * 1000);
-//         })(i);
-        
+//         })(i); 
 //     }
 // }
 // a();
@@ -54,7 +57,7 @@
 
 
 // Q what is function Expression
-
+//function expression is nothing but when a function store inside a variable
 
 // const squre = function(num){
 //     return num * num;
@@ -62,6 +65,7 @@
 // console.log(squre(5));
 
 // what is 1st class function 
+//when a function call inside another function as  just like a variable 
 // function squre(num){
 //     return num * num;
 // }
@@ -78,6 +82,7 @@
 //     return (function(y){
 //         const startTime = performance.now();
 //         console.log(x); //1
+//         console.log(y); //2
 //         const endTime = performance.now();
 //         console.log(`Execution time: ${endTime - startTime} milliseconds`)
 //     })(2);
@@ -119,11 +124,12 @@
 
 
 // Q:-rest and spread operator
+// var arr = [5,6];
 
 // function multiply(...nums){ // this is rest operator
 //     console.log(nums[0] * nums[1]);
 // }
-// var arr = [5,6];
+
 
 // multiply(...arr); //this is spread operator
 
@@ -135,6 +141,26 @@
 // }
 
 // fn(1,2,3,4,5,6,7,8,9,);
+
+//callback function
+
+function gretting(name){
+    console.log("hello" + name);
+}
+function processUserInput(callback){
+    var name = " rajesh";
+    callback(name);
+}
+processUserInput(gretting);
+
+function greet(name,callback){
+    console.log("hello" + name);
+    callback();
+}
+function saygoodbye(){
+    console.log("goodbye");
+}
+greet("rajesh",saygoodbye);
 
 
 
@@ -195,12 +221,12 @@
 // console.log(value); // abc {}
 
 
-let count = 0;
+// let count = 0;
 
-(function printCount(){
-    if(count === 0){
-        let count = 1;
-        console.log(count);//1
-    }
-    console.log(count);//0 because this shadowing will work on that block scope so on  1st console.log(1) as answer only for that second count it is now a fucntion scope so it will take count =0
-})()
+// (function printCount(){
+//     if(count === 0){
+//         let count = 1;
+//         console.log(count);//1
+//     }
+//     console.log(count);//0 because this shadowing will work on that block scope so on  1st console.log(1) as answer only for that second count it is now a fucntion scope so it will take count =0
+// })()

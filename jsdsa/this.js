@@ -1,4 +1,5 @@
 // // Question
+
 //  this.a =5;
 //  function getParam(){
 //     console.log(this.a);
@@ -21,7 +22,7 @@
 //     }
 //  }
 
-//  user.getDetails();
+//  user.getDetails();//rajesh
 
 
 
@@ -37,7 +38,15 @@
 //     }
 //  }
 
-//  user1.childObj.getDetails1();
+//  user1.childObj.getDetails1(); //gelli and undefined
+
+//fix this using bind
+
+// const bindfix = user1.childObj.getDetails1.bind({
+//   name : user1.name,
+//   newName : user1.childObj.newName,
+// })
+// console.log(bindfix());
 
 //arrow function will refere to window if it is nested function then it refer to the its parent function 
 
@@ -50,7 +59,16 @@
 // }
 
 // }
-// user.getDetails();
+// user.getDetails();//rajesh
+
+// let user ={
+//     name:"rajesh",
+//     age:24,
+//     getDetails:()=>{
+//         console.log(this.name);
+//     }
+// }
+// user.getDetails();//this will give undefined because it is a  arrowfuncion is will pointed to the imediate parent function so it will give nothing 
 
 
 //  class user{
@@ -60,9 +78,17 @@
 //     getName(){
 //       console.log(this.name);
 //     }
+//     setName(newName){
+//         this.name =newName
+//     }
 //  }
 //  //this new keyword create a new object
 //  const User = new user("Rajesh");
+//  User.getName();//rajesh
+
+//  User.setName("gelli");
+//  User.getName();
+
 
 // Question
 
@@ -71,11 +97,13 @@
 //     getName(){
 //       const firstName = "Rajesh behera";
 //       return this.firstName;
+//     //   return firstName;
 //     }
 //  }
 //  console.log(user.getName());//Rajesh !
 
 // Question
+
 //  function makeUser(){
 //    return {
 //       name : "rajesh",
@@ -91,7 +119,7 @@
 //    return {
 //       name:"rojalin",
 //       ref(){
-//          return this;
+//          return this.name;
 //       }
 //    }
 //  }
@@ -110,6 +138,7 @@
 //    }
 // }
 // setTimeout(user.logMessage,1000);//this code will give nothing of undefined because settimeout take as callback function this is indicate to window object
+
 
 
 //fix this
@@ -176,6 +205,24 @@
 //    }
 // }
 // object.method(callback,2,3);//4
+
+// create an object calculator 
+
+// let calculator ={
+//     read(){
+//         this.a = prompt("a= " ,0 );
+//         this.b=  prompt ("b= " ,0 );
+//     },
+//     sum(){
+//       return thia.a+this.b;
+//     },
+//     mul(){
+//       return thia.a*this.b;
+//     }
+// }
+// calculator.read();
+// console.log(calculator.sum())
+// console.log(calculator.mul());
 
 
 

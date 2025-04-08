@@ -8,7 +8,6 @@
 //     }
 // }
 
-
 // console.log(f(5)(6));
 
 // function f(a){
@@ -81,7 +80,8 @@
 
 
 //Question 4 - Currying vs Partial Application
-
+//partial application transform a function in to another function a small arite.
+//arite means no of operands pass as argment
 // function sum(a){
 //     return function (b,c){
 //         return a+b+c;
@@ -103,9 +103,10 @@
 //         document.querySelector("#" + id).textContent = content;
 //     }
 //  }
-//  const updateHeader = updateElementText("heading");
+//   const updateHeader = updateElementText
+// ("heading");
 
-//  updateHeader("love")
+//  updateHeader("love")  
 
 //Question 6 - curry() implementation
 // Converts false(a,b,c) into false(a)(b)(c)

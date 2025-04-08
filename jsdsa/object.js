@@ -1,4 +1,23 @@
- 
+// const user = {
+//     name:"Roadside Coder",
+//     age:24,
+//     isToatllyAwesome:true,
+// };
+// //for access the value
+// // for(key in user){
+// //     console.log(user[key])
+// // }
+// //this is for the key
+// // for(key in user){
+// //     console.log(key)
+// // }
+
+// for(let x of Object.keys(user)){
+//     console.log(x,user[x])
+// }
+
+
+
 // const user ={
 //     name : "rajesh",
 //     age : 24
@@ -30,13 +49,24 @@
 
 
 // // Question :-2 create a function multipyBytwo(obj) that
-//             //    multiplies all numeric property valure of nums by 2
+// //    multiplies all numeric property valure of nums by 2
+
 // let nums = {
 //   a:100,
 //   b:200,
 //   tutle:"My nums",
 // };
 // multiplyByTwo(nums);
+// function multiplyByTwo(x){
+//     for(let key in x){
+//         if(typeof x[key] === "number"){
+//             x[key] *=2 ;
+            
+//         }
+//     }
+// }
+
+// console.log(nums);
 
 // function multiplyByTwo(obj){
 //   //for accessing the key and vlaue 
@@ -55,7 +85,7 @@
 
 // const a={};
 // const b = {key:"b"};
-// //this b object  is not converted key unless this is a string;
+// //this b object  is not converted to  key unless this is a string;
 // const c = {key:"c"};
 
 
@@ -66,6 +96,18 @@
 
 // console.log(a[b]); //ans is 456
 
+//if i need to a[b] is 123 we should use Map
+
+// const a = new Map();
+// const b = {key : "b"};
+// const c = {key : "c"};
+
+// a.set(b,123);
+// a.set(c,456);
+
+// console.log(a.get(b));
+// console.log(a.get(c));
+
 
 // Question what is JSON.stringify and JSON.parse
 // this will use this in storing data in localstorage
@@ -75,9 +117,12 @@
 // }
 
 // const strObj= JSON.stringify(user);
+
 // // when we try to do object to string forcefully then it will give [object object] 
+
 // // localStorage.setItem("data" ,user)
 // localStorage.setItem("data" ,strObj)
+
 // console.log(JSON.parse(localStorage.getItem("data")))
 // // console.group(JSON.parse(strObj))
 
@@ -127,6 +172,16 @@
 // Question in  javascript
 // what is destructuring in obj
 
+// let user= {
+//     name: "rajesh",
+//     age:26
+// }
+// const {name} = user;
+// console.log(name); //rajesh
+
+
+// Question in javascript
+
 // let user={
 //   name:"Piyush",
 //   age:25,
@@ -140,32 +195,31 @@
 
 // // const {name:myname}  = user;
 
-// const{
-//   fullName :{first},
-// }=user;
+// //here one think to notice for the nested destructuring  i use fullName :{first} the {};for the  above name change of use i just did const {name:myName} = user; 
+// const{fullName :{first}}=user;
 // console.log(first);
 
 
 // Q 
 
-const user1 = {
-    name: "Piyush",
-    age: 25,
-    address: {
-        street: "street1",
-        city: "city1",
-        }
-}
+// const user1 = {
+//     name: "Piyush",
+//     age: 25,
+//     address: {
+//         street: "street1",
+//         city: "city1",
+//         }
+// }
 
 // const user2 = user1;
 
 //this will change only  the value of 
-const user2 = JSON.parse(JSON.stringify(user1));
+// const user2 = JSON.parse(JSON.stringify(user1));
 
-user2.name = "Ramesh";
-user2.address.city = "pune";
-console.log(user1);
-console.log(user2);
+// user2.name = "Ramesh";
+// user2.address.city = "pune";
+// console.log(user1);
+// console.log(user2);
 
 // In JavaScript, when you assign an object to another variable, such as const user2 = user1;, both variables (user1 and user2) point to the same memory reference. They do not create separate copies of the object. thats why the ans is
 // {
@@ -204,4 +258,25 @@ console.log(user2);
 //after chnageing the name
 // console.log(userName); //Ramesh
 // console.log(data); //{age: 25}
+
+
+//object refrencing
+//these both are false because these are different object so it refrence to the different object so it never same
+// console.log({a:1}== {a:2});
+// console.log({b:5} === {b:3});
+
+
+// output base question 
+
+const value = {number:10};
+
+const multiplies = (x={...value})=>{
+    console.log((x.number *= 2));
+}
+//this multiplies never change the original value of this because it will clone the value above multiplies function
+multiplies();//20
+multiplies();//20
+//but here it direactly pointed to the value of the about number:10 so it will change the original value
+multiplies(value); //20
+multiplies(value); //40
 

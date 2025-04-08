@@ -1,7 +1,5 @@
 //Synchronous and Asynchronous code
 
-
-
 // console.log("start");
 
 // function importantAction(username){
@@ -10,10 +8,27 @@
 //         return `my Name ${username}`;
 //     },1000)
 // }
-
 // const message = importantAction("rajesh");
 
 // console.log(message); //undefined
+
+// console.log("Finish");
+
+//fix this
+//using callback i fix this async code
+
+// console.log("start");
+
+// function importantAction(username,cb){
+    
+//     setTimeout(()=>{
+//         cb( `my Name ${username}`);
+//     },1000)
+// }
+// const message = importantAction("rajesh",function(message){
+//     console.log(message); 
+// });
+
 
 // console.log("Finish");
 
@@ -37,22 +52,21 @@
 // }
 // function ShareTheVideo(video,cb){
   
-//         setTimeout(()=>{
-//            cb(  `Share the${video} video`);
-//         },1000)
+//     setTimeout(()=>{
+//        cb(  `Share the${video} video`);
+//     },1000)
 // }
 
-
-
+ 
 // //when we call this nested with in it that's called callback Hell
 
 //  importantAction("rajesh",function (message){
-//     console.log(message); //undefined
+//     console.log(message); 
    
-//     likeTheVideo("Javascript  interview Question ", (like) =>{
+//     likeTheVideo(" Javascript  interview Question ", (like) =>{
 //         console.log(like);
 
-//         ShareTheVideo("Javascript  interview Question ", (share) =>{
+//         ShareTheVideo(" Javascript  interview Question ", (share) =>{
 //             console.log(share);
     
 //         });
@@ -65,12 +79,11 @@
 // console.log("start");
 
 // function importantAction(username ){
-//     return new Promise((resolve,reject)=>{
-
-//         setTimeout(()=>{
-//            resolve(  `my Name ${username}`);
-//         },5000)
-//     })
+//    return new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve(`this is ${username} `)
+//     },1000)
+//    })
 // } 
 // function likeTheVideo(video,cb){
 //     return new Promise((resolve,reject)=>{
@@ -90,10 +103,11 @@
 //     })
 // }
 
-// //instade of doing this
-//  importantAction("Roadside Coder")
+//instade of doing this
+//  importantAction("Rajesh")
 //  .then((res)=>{
 //     console.log(res);
+//     //when we return it like promise so can do chaining here
 //     return likeTheVideo("javascript interview Question");
 //  }).then((res)=>{
 //     console.log(res);
@@ -101,14 +115,14 @@
 //  }).then((res)=>{
 //     console.log(res);
 //  })
-//  .catch((err)=>console.log(err));
+//  .catch((err)=>console.log(err)); 
 
 // //  promise combinator :- these means this will help me to execute more than one promise in it and result accordingly;
 
 // // Promise.all // this can help me to get all resolved cd thing . Problem for this is if any one of them will reject then it show  error
 
 // Promise.all([
-//     importantAction("Roadside Coder"),
+//     importantAction("Rajesh"),
 //         likeTheVideo("Javascript Interview Questuion"),
 //         ShareTheVideo("Javascript Interview Question"),
 // ]).then((res)=>{
@@ -121,6 +135,8 @@
 
 //Promise.any = it will return only the 1st resolve one if 3 function are tehre and all 3are rejected then it will give reject
 
+//this will only allow resolve if any reject is there no issue 
+
 // Promise.allSettled([
 //     importantAction("Roadside Coder"),
 //     likeTheVideo("Javascript Interview Questuion"),
@@ -131,7 +147,7 @@
 //     console.log("Error: Promise Failed" , err);
 // })
  
-
+//this is the modern approach to solve this
 //async await
 
 // const result = async () =>{
@@ -189,6 +205,7 @@
 
 //Interview question
 
+
 // console.log("Start");
 
 // const Promise1 = new Promise((resolve,reject)=>{
@@ -206,20 +223,20 @@
 //because javascript always consider sync then async code so here resolve is coming in as async.
 
 
-console.log("start"); //first
-const fn = () =>{
-    new Promise((resolve,reject)=>{
-        console.log(1);//third because after middle fn()run so this will go after middle
-        resolve("success");//fifth
-    })
+// console.log("start"); //first
+// const fn = () =>{
+//     new Promise((resolve,reject)=>{
+//         console.log(1);//third because after middle fn()run so this will go after middle
+//         resolve("success");//fifth
+//     })
 
-    console.log("middle");//second
+//     console.log("middle");//second
 
-    fn().then((res)=>{
-        console.log(res); //fifth
-    })
-}
-console.log("end");//fourth
+//     fn().then((res)=>{
+//         console.log(res); //fifth
+//     })
+// }
+// console.log("end");//fourth
 
 
 // function job(){
@@ -249,72 +266,81 @@ console.log("end");//fourth
 
 //Ans:- error 1 after Success 4 because we reject the promise so it directly come to error
 
-function job(state){
-    return new Promise(function(resolve,reject){
-        if(state){
-            resolve("success");
-        }else{
-            reject("error");
-        }
-    });
-}
+// function job(state){
+//     return new Promise(function(resolve,reject){
+//         if(state){
+//             resolve("success");
+//         }else{
+//             reject("error");
+//         }
+//     });
+// }
 
-let promise =job(true);
+// let promise =job(true);
 
-promise
-    .then(function(data){
-        console.log(data);
+// promise
+//     .then(function(data){
+//         console.log(data);
 
-        return job(false);
-    })
-    .catch(function(error){
-        console.log(error);
-        //when u return in catch it will resolve next then
-        return "Error Caught";
-    })
-    .then(function(data){
-        console.log(data);
-        return job(true);
-    })
-    .catch(function(error){
-        console.log(error);
-    })
+//         return job(false);
+//     })
+//     .catch(function(error){
+//         console.log(error);
+//         //when u return in catch it will resolve next then
+//         return "Error Caught";
+//     })
+//     .then(function(data){
+//         console.log(data);
+//         return job(true);
+//     })
+//     .catch(function(error){
+//         console.log(error);
+//     })
 
     // Ans:-  success
             //error
             //error caught
 
 // // Q3  promise chaining
+
 // const firstPromise = new Promise((resolve ,reject)=>{
 //     resolve("First!")
 // })
 
 // const secondPromise = new Promise((resolve,reject)=>{
-//     resolve("Second!");
+//     resolve(firstPromise);
 // });
 
 // secondPromise 
 // .then((res)=>{
 //     return res;
-//     })
-//     .then((res)=>console.log(res));
+//     }).then((res)=>console.log(res));
 
 // Q:4 
 // // write a examle using async/await instade of .then/catch 
 
-// async function loadjson(url){
-//     let response = await fetch(url);
+async function loadjson(url){
+    //this is not the best way to do
+    // return fetch(url).then((response)=>{
+    //     if(response.status == 200){
+    //         return response.json;
+    //     }else{
+    //         throw new Error(response.status);
+    //     }
+    // })
 
-//     if(response.status == 200){
-//         let data = await response.json();
-//         return data;
-//     }
-//     throw new Error(response.status );
-// }
+    let response = await fetch(url);
 
-// loadjson("https://fakeurl.com/").catch((err)=>{
-//     console.log(err);
-// })
+    if(response.status == 200){
+        let data = await response.json();
+        return data;
+    }
+    throw new Error(response.status );
+}
+
+loadjson("https://fakeurl.com/").catch((err)=>{
+    console.log(err);
+})
 
 // console.log("start");
 // function givemeName(username){
@@ -335,3 +361,10 @@ promise
 
 // givemeName(rajesh);
 // console.log("end");
+
+
+//solve promise Recursively
+
+function promRecurse(funcPromise){
+    //write Implemetation Here
+}

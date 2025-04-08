@@ -1,5 +1,19 @@
 //what is call
 
+
+var obj ={name:"rajesh"};
+function sayHello(age){
+    return "Hello "+ this.name + " is "+age;
+}
+// console.log(sayHello.call(obj,25));
+//apply is same as call but here what ever argumet we need to pass that pass in a array 
+// console.log(sayHello.apply(obj,[24]))
+
+//bin will create a function on this
+// const bindfunc = sayHello.bind(obj);
+// console.log(bindfunc(24))
+
+
 // var obj ={name:"rajesh"};
 
 // function sayHello(age){
@@ -109,14 +123,16 @@
 //Question  Append an array to another array
 
 
+
+const array = ["a" , "b"];
+const elements = [0,1,2];
 // concate will give new array instade of that array so i use apply here
 
-// const array = ["a" , "b"];
-// const elements = [0,1,2];
+// console.log(array.concat(elements));
 
-// array.push.apply(array,elements);
+array.push.apply(array,elements);
 
-// console.log(array);
+console.log(array);
 
 
 // question:- find min/max number is an array 
@@ -170,7 +186,7 @@
 //         console.log(`${this.name} faild to log`)
 //     }
 // }
-// //use bind here to get the name bind(uer)
+// //use bind here to get the name bind(user)
 // checkPassword(user.loginSuccessful.bind(user),user.loginFailed.bind(user));
 
 
@@ -207,7 +223,8 @@
 //     }
 // }
 // var person2 = {age : 25};
-// person.getAgeArrow.call (person2);//undefind because arrow function will always indicate to the window object
+// person.getAgeArrow.call (person2);
+// //undefind because arrow function will always indicate to the window object
 // person.getAge.call(person2);//24
 
 
@@ -226,11 +243,12 @@
 //   )  
 // }
 
+// call takes one is context and other is ...arg of object    
 // Function.prototype.myCall = function(context = {} , ...args){
 //     if(typeof this !== 'function'){
 //         throw new Error(this + "Its not callable");
 //     }
-//     context.fn = this;
+//     context.fn = this; //this indicate  to   parchaseCar
 //     context.fn(...args);
 // }
 

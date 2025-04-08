@@ -8,17 +8,32 @@
 
 //pollyfil of map ,filter and reduce
 
-// Array.map((num,i,arr)=>{})
-//     Array.prototype.myMap =function(cb){
-//     //map is create a new array
-//     let temp = [];
-//     //here this is for arr
-//     for(let i=0;i<this.length;i++){
-//         temp.push(cb(this[i],i,this));
-//     }
-//     return temp;
-// }
+Array.prototype.myMap=function(cb){
+    let temp =[];
+    for(let i =0;i<this.length;i++){
+        temp.push(cb(this[i],i,this));
+    }
+    return temp;
+}
 
+Array.prototype.myFilter =function(cb){
+    let temp =[];
+    for(let i =0;i<this.length;i++){
+        if(cb(this[i],i,this)) temp.push(this[i])
+    }
+    return temp
+}
+
+Array.prototype.myReduce = function(cb,initialValue){
+    var acc = initialValue;
+    for(let i=0;i<this.length;i++){
+        //if anything present inside the acc tehn cb(this[i],i,this )otherthan that the firstvalue of the array
+        acc = acc ? cb(this[i],i,this):this[i];
+    }
+    return acc;
+}
+
+// Array.map((num,i,arr)=>{})
 
 
 // Array.prototype.myMap=function(cb){
@@ -41,16 +56,6 @@ const nums = [1,2,3,4];
 // // filter pollyfil
 
 // // Array.filter((num,i,arr)=>{})
-// Array.prototype.myfilter =function(cb){
-//         //map is create a new array
-//     let temp = [];
-    
-//     for(let i=0;i<this.length;i++){
-//             if(cb(this[i],i,this)) temp.push(this[i]);
-//         }
-//         return temp;
-//     }
-    
 
 // Array.prototype.myfilter= function(cb){
 //     let temp = [];
@@ -61,7 +66,6 @@ const nums = [1,2,3,4];
 //     }
 //     return temp;
 // }
-
 
 
 // //FILTER
