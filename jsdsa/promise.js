@@ -14,6 +14,24 @@
 
 // console.log("Finish");
 
+
+console.log("start");
+function importantAction (userName,cb){
+    setTimeout(()=>{
+        cb( `my Name ${userName}`);
+    },1000)
+}
+const message1 = importantAction("rajesh",function(message1){
+    console.log(message1);
+})
+
+console.log("finish");
+
+
+
+
+
+
 //fix this
 //using callback i fix this async code
 
@@ -76,6 +94,7 @@
 
 
 // resolve above code usign Promise
+
 // console.log("start");
 
 // function importantAction(username ){
@@ -319,28 +338,28 @@
 // Q:4 
 // // write a examle using async/await instade of .then/catch 
 
-async function loadjson(url){
-    //this is not the best way to do
-    // return fetch(url).then((response)=>{
-    //     if(response.status == 200){
-    //         return response.json;
-    //     }else{
-    //         throw new Error(response.status);
-    //     }
-    // })
+// async function loadjson(url){
+//     //this is not the best way to do
+//     // return fetch(url).then((response)=>{
+//     //     if(response.status == 200){
+//     //         return response.json;
+//     //     }else{
+//     //         throw new Error(response.status);
+//     //     }
+//     // })
 
-    let response = await fetch(url);
+//     let response = await fetch(url);
 
-    if(response.status == 200){
-        let data = await response.json();
-        return data;
-    }
-    throw new Error(response.status );
-}
+//     if(response.status == 200){
+//         let data = await response.json();
+//         return data;
+//     }
+//     throw new Error(response.status );
+// }
 
-loadjson("https://fakeurl.com/").catch((err)=>{
-    console.log(err);
-})
+// loadjson("https://fakeurl.com/").catch((err)=>{
+//     console.log(err);
+// })
 
 // console.log("start");
 // function givemeName(username){
@@ -365,6 +384,6 @@ loadjson("https://fakeurl.com/").catch((err)=>{
 
 //solve promise Recursively
 
-function promRecurse(funcPromise){
-    //write Implemetation Here
-}
+// function promRecurse(funcPromise){
+//     //write Implemetation Here
+// }

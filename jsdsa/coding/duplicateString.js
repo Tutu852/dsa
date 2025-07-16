@@ -39,6 +39,9 @@
 //     return duplicates;
 //   };
 
+
+
+
   const findDuplicate=(str)=>{
     let duplicate = [];
     let seen={};
@@ -46,7 +49,7 @@
 
     for(let i=0;i<=str.length;i++){
       if(seen[str[i]]){
-        if(!alreadyThere(str[i])){
+        if(!alreadyThere[str[i]]){
           duplicate.push(str[i]);
           alreadyThere[str[i]]=true;
         }
@@ -59,5 +62,5 @@
   
   // Example usage
   let str = "hello world";
-  console.log(findDuplicatesInString(str)); 
+  console.log(findDuplicate(str)); 
   

@@ -6,6 +6,7 @@
 
 
 
+
 // // This function is defined in the global scope
 // function multiply() {
 //   return num1 * num2;
@@ -66,6 +67,7 @@
 
 // what is 1st class function 
 //when a function call inside another function as  just like a variable 
+
 // function squre(num){
 //     return num * num;
 // }
@@ -76,7 +78,7 @@
 // displaySqure(squre);
 
 
-// Q IIFE -O/P Based Question 
+// Q IIFE -O/P Based Question  imediate invoke function expression
 
 // (function(x){
 //     return (function(y){
@@ -109,7 +111,7 @@
 
 // var x= 21;
 // var fun = function(){
-//     console.log(x); //undefined
+//     console.log(x); //undefined beacuse 1st come global scope and after that local scope so in local scope in careation phase x is declare after the console log in creation phase that is undefined so this is undefined
 //     var x= 20;
 // }
 // fun();
@@ -144,23 +146,23 @@
 
 //callback function
 
-function gretting(name){
-    console.log("hello" + name);
-}
-function processUserInput(callback){
-    var name = " rajesh";
-    callback(name);
-}
-processUserInput(gretting);
+// function gretting(name){
+//     console.log("hello" + name);
+// }
+// function processUserInput(callback){
+//     var name = " rajesh";
+//     callback(name);
+// }
+// processUserInput(gretting);
 
-function greet(name,callback){
-    console.log("hello" + name);
-    callback();
-}
-function saygoodbye(){
-    console.log("goodbye");
-}
-greet("rajesh",saygoodbye);
+// function greet(name,callback){
+//     console.log("hello" + name);
+//     callback();
+// }
+// function saygoodbye(){
+//     console.log("goodbye");
+// }
+// greet("rajesh",saygoodbye);
 
 
 
@@ -230,3 +232,12 @@ greet("rajesh",saygoodbye);
 //     }
 //     console.log(count);//0 because this shadowing will work on that block scope so on  1st console.log(1) as answer only for that second count it is now a fucntion scope so it will take count =0
 // })()
+
+
+
+// const arr = [2,34,5,6,7,8]
+
+// function restOperator(...arr){
+//  return arr[0] + arr[1];
+// }
+// console.log(...arr);

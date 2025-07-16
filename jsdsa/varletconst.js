@@ -28,7 +28,7 @@
 //     console.log(c);
 
 // }
-// test();
+// test();//hii //hello
 
 
  //illegal shadowing

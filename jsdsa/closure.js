@@ -41,6 +41,8 @@
 // }
 
 
+
+
 // function salutation() {
 //     let name = 'Aayush';
 
@@ -64,7 +66,8 @@
 // let wish = salution();
 // wish();
 
-//in closer we can access n every scope
+//in closer we can access n every scope 
+// chaning 
 
 // var e = 10;
 // function sum(a){
@@ -94,18 +97,29 @@
 // addSix(10);
 // addSix(15);
 
-// time optimization using closure 
 // function find(index){
+    //     let a = [];
+    //     for(let i=0;i<100000;i++){
+        //         a[i] = i*i;
+        //     }
+        // }
+        // const cls = find();
+        // console.time("6");
+        // cls(6);
+        // console.timeEnd(6)
+        
+// time optimization using closure 
+// //solution
+// function find(){
 //     let a = [];
 //     for(let i = 0;i<100000;i++){
 //         a[i] = i*i;
 //     }
-//     return function(index){
-    
+//     return function(index){ 
 //         console.log(a[index])
 //     }
 // }
-// // const clouser = find();
+// const clouser = find();
 // console.time("6");
 // clouser(6);
 // console.timeEnd("6");
@@ -118,29 +132,30 @@
 //create a private counter
 
 
-// function counter(){
-//     var _counter = 0;
+function counter(){
+    //_counter _ this is privatex
+    var _counter = 0;
 
-//     function add(increment){
-//         _counter += increment;
-//     }
-//     function retrive(){
-//         return "Counter = " + _counter;
-//     }
+    function add(increment){
+        _counter += increment;
+    }
+    function retrive(){
+        return "Counter = " + _counter;
+    }
 
-//     return {
-//         add,
-//         retrive,
-//     };
-// }
+    return {
+        add,
+        retrive,
+    };
+}
 
-// const c = counter();
-// console.log(c.add(5));
+const c = counter();
+console.log(c.add(5));
 
-// c.add(10);
+c.add(10);
 
 
-// console.log(c.retrive());
+console.log(c.retrive());
 
 
 //what is Module Pattern
@@ -159,25 +174,25 @@
 // module.publicMethod();
 // module.privateMethod();
 
-let view;
-function likeTheVideo(){
-    let called = 0;
-    return function(){
+// let view;
+// function likeTheVideo(){
+//     let called = 0;
+//     return function(){
 
-        if(called > 0){
-            console.log("Already like the Video");
-        }else{
-            view = "Like the video";
-            console.log("Please ",view);
-            called++;
-        }
-    }
-}
-let like = likeTheVideo();
-like();
-like();
-like();
-like();
+//         if(called > 0){
+//             console.log("Already like the Video");
+//         }else{
+//             view = "Like the video";
+//             console.log("Please ",view);
+//             called++;
+//         }
+//     }
+// }
+// let like = likeTheVideo();
+// like();
+// like();
+// like();
+// like();
 
 
 

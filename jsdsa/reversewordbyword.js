@@ -23,10 +23,6 @@ function reverseEachWord(input){
     return str.join('');
 }
 
-
-
-
-
 let input = "Hello world this is JavaScript";
 console.log("Original String:", input);
 

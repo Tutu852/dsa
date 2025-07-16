@@ -1,3 +1,5 @@
+
+
 function reverse(num){
    return Number(num.toString().split("").reverse().join(""));
 
@@ -14,3 +16,4 @@ function rever(num){
     return rev;
 }
 console.log(rever(121))
+
