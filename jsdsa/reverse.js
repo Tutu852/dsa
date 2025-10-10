@@ -12,13 +12,9 @@ function reverseArray() {
         left++;
         right--;
     }
-
-
 }
-
 // Test the reverseArray function
-
 console.log("Original array:", myArray);
-
 reverseArray(myArray);
 console.log("Reversed array:", myArray);
+

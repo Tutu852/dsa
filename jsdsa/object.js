@@ -268,15 +268,44 @@
 
 // output base question 
 
-const value = {number:10};
+// const value = {number:10};
 
-const multiplies = (x={...value})=>{
-    console.log((x.number *= 2));
+// const multiplies = (x={...value})=>{
+//     console.log((x.number *= 2));
+// }
+// //this multiplies never change the original value of this because it will clone the value above multiplies function
+// multiplies();//20
+// multiplies();//20
+// //but here it direactly pointed to the value of the about number:10 so it will change the original value
+// multiplies(value); //20
+// multiplies(value); //40
+
+
+// 
+
+
+// const users = {
+//     frontendmaster : {},
+//     rahul :{}
+// }
+// let name = "rahul"
+
+// if(users[name]){
+//     console.log("BOSS")
+// }else{
+//     console.log("NOT BOSS")
+// }
+
+
+// fix this 
+const users = {
+    frontendmaster : {},
+    rahul :{}
 }
-//this multiplies never change the original value of this because it will clone the value above multiplies function
-multiplies();//20
-multiplies();//20
-//but here it direactly pointed to the value of the about number:10 so it will change the original value
-multiplies(value); //20
-multiplies(value); //40
+let name = "ra"
 
+if(Object.hasOwn(users,name)){
+    console.log("BOSS")
+}else{
+    console.log("NOT BOSS")
+}

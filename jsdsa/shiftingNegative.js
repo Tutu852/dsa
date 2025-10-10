@@ -9,6 +9,7 @@ function shiftingNegativeInteger(arr , size){
     }
 }
 
+
 const arr= [23,-7,12,-10,-1,40,60];
 const size = 7;
 

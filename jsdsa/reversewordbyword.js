@@ -9,13 +9,14 @@ function reverse(str,start,end){
     }
 }
 
-
 function reverseEachWord(input){
     let str = input.split('');
+    console.log("Input String as Array:", str);
     let start = 0;
 
     for(let i=0; i<=str.length;i++){
         if(i == str.length || str[i] == ' ' ){
+            //i-1 is the end index of the word
             reverse(str,start,i-1);
             start = i + 1;
         }
@@ -28,3 +29,5 @@ console.log("Original String:", input);
 
 let result = reverseEachWord(input);
 console.log("Reversed String:", result);
+
+

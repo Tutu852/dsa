@@ -91,11 +91,11 @@
 // console.log(xyz);
 
 
-const data ={
-    name:"john",
-}
+// const data ={
+//     name:"john",
+// }
 
-const abc = [1,2,3,4];
-console.log(delete data);
-console.log(delete abc);
- console.log(delete 1); // Output: true
+// const abc = [1,2,3,4];
+// console.log(delete data);
+// console.log(delete abc);
+//  console.log(delete 1); // Output: true

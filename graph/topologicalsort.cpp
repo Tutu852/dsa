@@ -2,8 +2,10 @@
 #include<unordered_map>
 #include<list>
 #include<stack>
+#include<algorithm>
 #include<map>
 #include<queue>
+#include<vector>
 using namespace std;
 
 class Graph{
@@ -80,35 +82,78 @@ class Graph{
                     q.push(nbr);
                 }
             }
-        }
+        };
+   
     };
+         void shortPathBfs(int src,int dest){
+            queue<int>q;
+            map<int,bool>visited;
+            map<int,int>parent;
+
+            //initial state
+            q.push(src);
+            visited[src]=true;
+            parent[src] =-1;
+
+            while(!q.empty()){
+                int frontNode = q.front();
+                q.pop();
+
+                for(auto nbr:adjList[frontNode]){
+                    if(!visited[nbr]){
+                        q.push(nbr);
+                        parent[nbr] = frontNode;
+                        visited[nbr] = true;
+                    }
+                }
+            }
+            //paret array tayar hoga
+            vector<int>ans;
+            while(dest != -1){
+                ans.push_back(dest);
+                dest = parent[dest];
+            }
+            reverse(ans.begin(),ans.end());
+            //print the shortest path
+            for(auto i:ans){
+                cout<<i <<" ";
+            }
+        };
 };
 
 int main(){
     Graph g;
     //for dfs graph
-    // g.addEdge(0,1,1);
-    // g.addEdge(1,2,1);
-    // g.addEdge(2,3,1);
-    // g.addEdge(3,4,1);
-    // g.addEdge(4,6,1);
-    // g.addEdge(6,7,1);
-    // g.addEdge(3,5,1);
-    // g.addEdge(5,6,1);
-
-    //for bfs graph
     g.addEdge(0,1,1);
     g.addEdge(1,2,1);
     g.addEdge(2,3,1);
-    g.addEdge(2,4,1);
-    g.addEdge(4,5,1);
+    g.addEdge(3,4,1);
+    g.addEdge(4,6,1);
+    g.addEdge(6,7,1);
+    g.addEdge(3,5,1);
     g.addEdge(5,6,1);
-    g.addEdge(5,7,1);
+
+    //for bfs graph
+    // g.addEdge(0,1,1);
+    // g.addEdge(1,2,1);
+    // g.addEdge(2,3,1);
+    // g.addEdge(2,4,1);
+    // g.addEdge(4,5,1);
+    // g.addEdge(5,6,1);
+    // g.addEdge(5,7,1);
     
 
     g.printAdjList();
-    int n = 8;
-    g.topoSortBfs(n);
+    // int n = 8;
+    // vector<int>topoOrder;
+    // g.topoSortBfs(n);
+
+    // if(topoOrder.size() == n){
+    //     cout<<"NO cycle: "<<endl;
+    // }else{
+    //     cout<<"Cycle Present: "<<endl;
+    // }
+    
 
 
     
@@ -125,5 +170,18 @@ int main(){
     //     cout<<st.top()<<" ";
     //     st.pop();
     // }
+     //for shortest graph
+    // g.addEdge(0,5,0);
+    // g.addEdge(5,4,0);
+    // g.addEdge(4,3,0);
+    // g.addEdge(0,6,0);
+    // g.addEdge(6,3,0);
+    // g.addEdge(0,1,0);
+    // g.addEdge(1,2,0);
+    // g.addEdge(2,3,0);
+    
+    // int src = 0;
+    // int dest=3;
+    // g.shortPathBfs(src,dest);
     return 0;
 }

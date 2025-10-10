@@ -4,18 +4,20 @@ let array = [
     [7, 8, 9],
 ];
 
-
 function tranpose (){
 let row  = array.length;
 let col = array[0].length;
 
-for(let i = 0;i<row;i++){
-    for(let j=i;j<col;j++){
-        [array[i][j] , array[j][i] ] = [array[j][i],array[i][j]]
+    for(let i = 0;i<row;i++){
+        for(let j=i;j<col;j++){
+            [array[i][j] , array[j][i] ] = [array[j][i],array[i][j]]
+        }
     }
 }
 
-}
+
+
+
 console.log("Original matrix:");
 console.table(array);
 

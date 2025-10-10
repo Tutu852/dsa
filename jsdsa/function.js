@@ -1,159 +1,166 @@
 
-// // The following variables are defined in the global scope
-// const num1 = 20;
-// const num2 = 3;
-// const name = "Rajesh ";
+// The following variables are defined in the global scope
+const num1 = 20;
+const num2 = 3;
+const name = "Rajesh ";
+// This function is defined in the global scope
+function multiply() {
+  return num1 * num2;
+}
+
+console.log(multiply()); // 60
+
+// A nested function example
+
+function getScore() {
+  const num1 = 2;
+  const num2 = 3;
+
+  function add() {
+    return `${name} scored ${num1 + num2}`;
+  }
+
+  return add();
+}    
+
+console.log(getScore()); // "Chamakh scored 5"
+
+for(let i=0;i<5;i++){
+    setTimeout(function(){
+        console.log(i);
+    },i * 1000);
+}
 
 
+function a(){
+    for(var i=0;i<3;i++){
+       ( function(i){
+            setTimeout(function log(){
+                console.log(i);
+            },i * 1000);
+        })(i); 
+    }
+}
+a();
 
-
-// // This function is defined in the global scope
-// function multiply() {
-//   return num1 * num2;
-// }
-
-// console.log(multiply()); // 60
-
-// // A nested function example
-
-// function getScore() {
-//   const num1 = 2;
-//   const num2 = 3;
-
-//   function add() {
-//     return `${name} scored ${num1 + num2}`;
-//   }
-
-//   return add();
-// }    
-
-// console.log(getScore()); // "Chamakh scored 5"
-
-// for(let i=0;i<5;i++){
-//     setTimeout(function(){
-//         console.log(i);
-//     },i * 1000);
-// }
-
-
-// function a(){
-//     for(var i=0;i<3;i++){
-//        ( function(i){
-//             setTimeout(function log(){
-//                 console.log(i);
-//             },i * 1000);
-//         })(i); 
-//     }
-// }
-// a();
-
-//     for(var i=0;i<3;i++){
-//        function inner(i){
-//             setTimeout(function log(){
-//                 console.log(i);
-//             },i * 1000);
-//         }   
-//         inner(i);
-//     }
+    for(var i=0;i<3;i++){
+       function inner(i){
+            setTimeout(function log(){
+                console.log(i);
+            },i * 1000);
+        }   
+        inner(i);
+    }
 
 
 // Q what is function Expression
-//function expression is nothing but when a function store inside a variable
+// function expression is nothing but when a function store inside a variable
 
-// const squre = function(num){
-//     return num * num;
-// }
-// console.log(squre(5));
+const squre = function(num){
+    return num * num;
+}
+console.log(squre(5));
 
 // what is 1st class function 
-//when a function call inside another function as  just like a variable 
 
-// function squre(num){
-//     return num * num;
-// }
+// when a function call inside another function as  just like a variable 
 
-// function displaySqure(fn){
-//     console.log("square is "+ fn(5));
-// }
-// displaySqure(squre);
+function greet(name){
+    return "hello " + name;
+}
+
+function greetMorning(fn){
+    console.log(fn("rajesh"));
+}
+greetMorning(greet); //hello rajesh
+
+
+function squre(num){
+    return num * num;
+}
+
+function displaySqure(fn){
+    console.log("square is "+ fn(5));
+}
+displaySqure(squre);
 
 
 // Q IIFE -O/P Based Question  imediate invoke function expression
 
-// (function(x){
-//     return (function(y){
-//         const startTime = performance.now();
-//         console.log(x); //1
-//         console.log(y); //2
-//         const endTime = performance.now();
-//         console.log(`Execution time: ${endTime - startTime} milliseconds`)
-//     })(2);
-// })(1);
+(function(x){
+    return (function(y){
+        const startTime = performance.now();
+        console.log(x); //1
+        console.log(y); //2
+        const endTime = performance.now();
+        console.log(`Execution time: ${endTime - startTime} milliseconds`)
+    })(2);
+})(1);
 
-// (function square(num){
-//     console.log(num * num);
-// })(5);
+(function square(num){
+    console.log(num * num);
+})(5);
 
 
 // Q Function Hoisting 
 
-// functionName();
-// console.log(x);
+functionName();
+console.log(x);
 
 
-// function functionName(){
-//     console.log("roadside coder");
-// }
+function functionName(){
+    console.log("roadside coder");
+}
 
-// var x =5;
+var x =5;
 
 // Q1 function hoisting 
 
-// var x= 21;
-// var fun = function(){
-//     console.log(x); //undefined beacuse 1st come global scope and after that local scope so in local scope in careation phase x is declare after the console log in creation phase that is undefined so this is undefined
-//     var x= 20;
-// }
-// fun();
+var x= 21;
+var fun = function(){
+    console.log(x); //undefined beacuse 1st come global scope and after that local scope so in local scope in careation phase x is declare after the console log in creation phase that is undefined so this is undefined
+    var x= 20;
+}
+fun();
 
 
 // Q:- Params vs Arguments   
 
-// function square(num){ //params
-//     console.log(num  * num);
-// }
-// square(5); //argumnents
+function square(num){ //params
+    console.log(num  * num);
+}
+square(5); //argumnents
 
 
 // Q:-rest and spread operator
-// var arr = [5,6];
+var arr = [5,6];
 
-// function multiply(...nums){ // this is rest operator
-//     console.log(nums[0] * nums[1]);
-// }
+function multiply(...nums){ // this is rest operator
+    console.log(nums[0] * nums[1]);
+}
 
 
-// multiply(...arr); //this is spread operator
+multiply(...arr); //this is spread operator
 
 
 // o/p based Question 
 
-// const fn=(a,x,y,...numbers)=>{
-//     console.log(a,y, numbers);
-// }
+const fn=(a,x,y,...numbers)=>{
+    console.log(a,y, numbers);
+}
 
-// fn(1,2,3,4,5,6,7,8,9,);
+fn(1,2,3,4,5,6,7,8,9,);
 
-//callback function
+// callback function
 
-// function gretting(name){
-//     console.log("hello" + name);
-// }
-// function processUserInput(callback){
-//     var name = " rajesh";
-//     callback(name);
-// }
-// processUserInput(gretting);
+function gretting(name){
+    console.log("hello" + name);
+}
+function processUserInput(callback){
+    var name = " rajesh";
+    callback(name);
+}
+processUserInput(gretting);
 
 // function greet(name,callback){
 //     console.log("hello" + name);
@@ -166,78 +173,78 @@
 
 
 
-// async function foo(){
-//     return "hello world";
-// }
+async function foo(){
+    return "hello world";
+}
 
-// const result = foo();
-// console.log(result); //promiese {"hello world"} //async always return promise
+const result = foo();
+console.log(result); //promiese {"hello world"} //async always return promise
 
-//if interviwer ask please reject this promise then
+// if interviwer ask please reject this promise then
 
-// async function foo(){
-//     return "hello world";
-    //these two way we can reject this promise
+async function foo(){
+    return "hello world";
+    // these two way we can reject this promise
 
-    // return  new Promise.reject("hello world");
-    // throw new Error("hello world"); 
+    return  new Promise.reject("hello world");
+    throw new Error("hello world"); 
 
-    //if i need to delay 
-    // return new Promise(()=>{})
+    // if i need to delay 
+    return new Promise(()=>{})
        
-// }
-//     // i need hello world in this result varable  
-// (async function(){
-//     const result = await foo();
-//     console.log(result);
-// })();
+}
+    // i need hello world in this result varable  
+(async function(){
+    const result = await foo();
+    console.log(result);
+})();
 
 // Q.
 
-// foo();
+foo();
 
-// var foo = 20;
+var foo = 20;
 
-// function foo(){
-//     console.log("calling foo");
-// }
-// foo();
+function foo(){
+    console.log("calling foo");
+}
+foo();
 
 
 // Q:-
-// async function foo(){
-//     return "Hello world";
-// }
+async function foo(){
+    return "Hello world";
+}
 
-// async function main() {
-//     const result =await foo();
-// console.log(result);
-// }
+async function main() {
+    const result =await foo();
+console.log(result);
+}
 
-// main(); //hello world
+main(); //hello world
 
-// function abc(){
-//     console.log("hii");
-// }
-// const value = new abc();
-// console.log(value); // abc {}
-
-
-// let count = 0;
-
-// (function printCount(){
-//     if(count === 0){
-//         let count = 1;
-//         console.log(count);//1
-//     }
-//     console.log(count);//0 because this shadowing will work on that block scope so on  1st console.log(1) as answer only for that second count it is now a fucntion scope so it will take count =0
-// })()
+function abc(){
+    console.log("hii");
+}
+const value = new abc();
+console.log(value); // abc {}
 
 
+let count = 0;
 
-// const arr = [2,34,5,6,7,8]
+(function printCount(){
+    if(count === 0){
+        let count = 1;
+        console.log(count);//1
+    }
+    console.log(count);//0 because this shadowing will work on that block scope so on  1st console.log(1) as answer only for that second count it is now a fucntion scope so it will take count =0
+})()
 
-// function restOperator(...arr){
-//  return arr[0] + arr[1];
-// }
-// console.log(...arr);
+
+
+const arr = [2,34,5,6,7,8]
+
+function restOperator(...arr){
+ return arr[0] + arr[1];
+}
+console.log(...arr);

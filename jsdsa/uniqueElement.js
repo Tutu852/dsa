@@ -1,4 +1,15 @@
- 
+
+function getUnique(arr,size){
+    let ans = 0;
+
+    for(let i=0; i<size;i++){
+        ans = ans ^ arr[i]
+    }
+    return ans;
+}
+
+
+
 
 
  function getUnique(arr, size){
