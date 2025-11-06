@@ -213,8 +213,8 @@ int main(){
     // insetAtPosition(head ,tail,5,1);
     // insetAtPosition(head,tail,100,1);
 
-    deleteNode(head,tail,3);
-    printLL(head);
+    // deleteNode(head,tail,3);
+    // printLL(head);
 
 
 
