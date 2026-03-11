@@ -1,4 +1,7 @@
 #include<iostream>
+#include<vector>
+#include<limits.h>
+#include<string>
 using namespace std;
 
 void merge(int arr[],int s,int e){
@@ -86,23 +89,60 @@ void mergeSort(int arr[],int s , int e){
 
     merge(arr,s,e);
 }
+void mergeTwosortedarray(int arr1[],int size1,int arr2,int size2,vector<int>&output){
+    // case1
+    int i=0;
+    int j=0;
+    //step2 : comparision
+    while(i <=size1 &&j <=size2){
+        if(arr1[i] < arr2[j]){
+            output.push_back(arr[i]);
+                i++;
+        }else{
+            output.push_back(arr[j]);
+            j++;
+    }    
+    // step 3: copy remaining part 
+    if(arr1[i] < size1){
+        output.puch_back(arr[i]);
+        i++;
+    }
+    if(arr1[j] < size2){
+        output.puch_back(arr[j]);
+        j++;
+    }
+}
 
 int main(){
-    int arr[] = {2,1,6,9,4,5};
-    int size = 6;
-    int s=0;
-    int e = size-1;
-     cout<< "Before merge sort " << endl;
-    for(int i=0;i<size;i++){
-        cout<<arr[i]<< " ";
-    }
-    cout<<endl;
+    // int arr[] = {2,1,6,9,4,5};
+    // int size = 6;
+    // int s=0;
+    // int e = size-1;
+    //  cout<< "Before merge sort " << endl;
+    // for(int i=0;i<size;i++){
+    //     cout<<arr[i]<< " ";
+    // }
+    // cout<<endl;
 
-    mergeSort(arr,s,e);
+    // mergeSort(arr,s,e);
 
-    cout<< "After merge sort " << endl;
-    for(int i=0;i<size;i++){
-        cout<<arr[i]<< " ";
+    // cout<< "After merge sort " << endl;
+    // for(int i=0;i<size;i++){
+    //     cout<<arr[i]<< " ";
+    // }
+    // cout<<endl;
+
+
+
+    //mergetwosortedarray 
+    int arr1 =[10,20,30,40];
+    int size1 = 4;
+    int arr2 = [50,60];
+    int size2 = 2;
+    vector<int>output;
+    mergeTwosortedarray(arr1,size1,arr2,size2);
+    cout<<"mergeTwosortedarray: "<<endl;
+    for(int i=0;i<6;i++){
+        cout<<output[i]<<endl;
     }
-    cout<<endl;
 }
