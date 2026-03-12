@@ -104,11 +104,11 @@ void mergeTwosortedarray(int arr1[],int size1,int arr2,int size2,vector<int>&out
     }    
     // step 3: copy remaining part 
     if(arr1[i] < size1){
-        output.puch_back(arr[i]);
+        output.push_back(arr[i]);
         i++;
     }
     if(arr1[j] < size2){
-        output.puch_back(arr[j]);
+        output.push_back(arr[j]);
         j++;
     }
 }
