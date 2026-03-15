@@ -89,17 +89,17 @@ void mergeSort(int arr[],int s , int e){
 
     merge(arr,s,e);
 }
-void mergeTwosortedarray(int arr1[],int size1,int arr2,int size2,vector<int>&output){
+void mergeTwosortedarray(int arr1[],int size1,int arr2[],int size2,vector<int>&output){
     // case1
     int i=0;
     int j=0;
     //step2 : comparision
     while(i <=size1 &&j <=size2){
         if(arr1[i] < arr2[j]){
-            output.push_back(arr[i]);
+            output.push_back(arr1[i]);
                 i++;
         }else{
-            output.push_back(arr[j]);
+            output.push_back(arr2[j]);
             j++;
     }    
     // step 3: copy remaining part 
